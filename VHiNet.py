@@ -58,7 +58,7 @@ dict_pred = predictor.prediction(args.topN[0])
 for query,preds in dict_pred.items():
     preds.to_csv(os.path.join(output_dir, (query+'_prediction.csv')))
 
-print('Predictions were written to ',output_dir)
+print('---- Predictions were written to ',output_dir,' ----')
     
 
 
