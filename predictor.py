@@ -24,12 +24,12 @@ class HostPredictor:
         self._crispr_signals = src.crispr.crispr_calculator(query_virus_dir, numThreads)
         self.crispr = src.crispr.uniGenus(self._crispr_signals, self._virus_index, self._host_index)
         # wish , if statement?
-        self.blast = src.blast.blast_calculator(query_virus_dir, self._virus_index, self._host_index, numThreads)
+        #self.blast = src.blast.blast_calculator(query_virus_dir, self._virus_index, self._host_index, numThreads)
         if ifShort:
             self.wish = src.wish.wish_llkd_calculator(query_virus_dir, self._virus_index, self._host_index)
         else:
             self.wish = None
-        #self.blast = src.blast.blast_calculator(query_virus_dir, self._virus_index, self._host_index, numThreads)
+        self.blast = src.blast.blast_calculator(query_virus_dir, self._virus_index, self._host_index, numThreads)
             
     def getScores(self):
         '''

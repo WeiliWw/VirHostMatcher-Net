@@ -1,11 +1,12 @@
 # README
 
-VHiNet is a Python tool for predicting virus-host interactions. Current version predicts hosts of given viruses from a database of 31,986 bacteria candidates. VHiNet has two modes: predicting for complete genomes and predicting for short viral contigs.
+VHiNet is a network-based computational tool for predicting virus-host interactions. Current version predicts hosts of given viruses from a database of 31,986 bacteria candidates. VHiNet has two modes: predicting for complete genomes and predicting for short viral contigs.
 
 ### Dependencies
-* [Biopython](http://biopython.org/wiki/Download)
-* [pandas](https://pandas.pydata.org/) 
-* [numpy](https://www.scipy.org/scipylib/download.html)
+* Python packages
+    + [Biopython](http://biopython.org/wiki/Download)
+    + [pandas](https://pandas.pydata.org/) 
+    + [numpy](https://www.scipy.org/scipylib/download.html)
 * [BLAST](https://www.ncbi.nlm.nih.gov/books/NBK279671/) 
 
 ### Installation
@@ -14,10 +15,10 @@ VHiNet requires Python 3.4+. To begin with, install dependencies and make sure t
 #### Building local dependent modules
 ##### Linux: 
 ```
-git ?????
+git clone https://github.com/WeiliWw/VHiNet.git 
 cd VhiNet
 python setup.py build_ext 
-python setup.py install --install-platlib=.
+python setup.py install --install-platlib=./src/
 ```
 ##### MacOS
 ```
@@ -25,14 +26,14 @@ brew install gcc@6
 export CC=gcc-6
 export CXX=g++-6
 
-git ?????
+git clone https://github.com/WeiliWw/VHiNet.git
 cd VHiNet
 python setup.py build_ext 
-python setup.py install --install-platlib=.
+python setup.py install --install-platlib=./src/
 ```
 
 ### Data preparation
-The prediction model of VHiNet depends on a large amount of data: BLAST index files of all bacteria and their CRISPRs, WIsH models(short viral contig mode) and hash files for calculating s~2~^*^, etc.
+The prediction model of VHiNet depends on a large amount of data: BLAST index files of all bacteria and their CRISPRs, WIsH models(short viral contig mode) and hash files for calculating s<sup>*</sup><sub>2</sub>, etc.
 
 #### Downloading
 ##### Complete genome mode alone
