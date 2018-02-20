@@ -7,10 +7,10 @@ VHiNet is a network-based computational tool for predicting virus-host interacti
     + [Biopython](http://biopython.org/wiki/Download)
     + [pandas](https://pandas.pydata.org/) 
     + [numpy](https://www.scipy.org/scipylib/download.html)
-* [BLAST](https://www.ncbi.nlm.nih.gov/books/NBK279671/) 
+* [BLAST](ftp://ftp.ncbi.nlm.nih.gov/blast/executables/LATEST/) 
 
 ### Installation
-VHiNet requires Python 3.4+. To begin with, install dependencies and make sure the command `blastn` from `BLAST` is added to a directory in `$PATH`.
+VHiNet requires Python 3.4+. To begin with, install dependencies and make sure the command `blastn` from `BLAST` is added to a directory in `$PATH`. To check directories in `$PATH`, run `echo $PATH`.
 
 #### Building local dependent modules
 ##### Linux: 
@@ -39,14 +39,13 @@ The prediction model of VHiNet depends on a large amount of data: BLAST index fi
 ##### Complete genome mode alone
 At the directory of VHiNet, run
 ```
-wget http://www-rcf.usc.edu/~weiliw/vhinet/data_vhinet.tar.gz    
+wget -c http://www-rcf.usc.edu/~weiliw/vhinet/data_vhinet.tar.gz    
 tar xf data_vhinet.tar.gz
 ```
-In MacOS, use `curl` instead to download the data.
 ##### Complete genome mode and short viral contig mode
 At the directory of VHiNet, run
 ```
-wget http://www-rcf.usc.edu/~weiliw/vhinet/data_vhinet_short_viral_contig.tar.gz    
+wget -c http://www-rcf.usc.edu/~weiliw/vhinet/data_vhinet_short_viral_contig.tar.gz    
 tar xf data_vhinet_short_viral_contig.tar.gz 
 ```
 In MacOS, use `curl` instead to download the data.
