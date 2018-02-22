@@ -125,11 +125,11 @@ def blast_calculator(query_virus_dir, virus_index, host_index, numThreads=1):
             query_cont.append(df)
     df_pseudo = pd.DataFrame(index=virus_index, columns=host_index).fillna(0)
     if query_cont == []:
-        print('----Intermediate files were written to ',output_dir,' ----')
+        print('----Intermediate files were stored at ',output_dir,' ----')
         return df_pseudo   # return a zero matrix if no match
     else:
         query_cont.append(df_pseudo)
-        print('----Intermediate files were written to ',output_dir,' ----')
+        print('----Intermediate files were stored at ',output_dir,' ----')
         return pd.concat(query_cont).groupby(level=0).sum().fillna(0).loc[virus_index][host_index]
     
     

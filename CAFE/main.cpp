@@ -427,7 +427,7 @@ int cafe(int argc, char* argv[])
 	printf("Finish pre-processing the hash of input fasta files.\n");
 
 	endTime = clock();
-	std::cout << "Time Elapsed: " << ((float)endTime - (float)startTime) / CLOCKS_PER_SEC << " seconds" << std::endl;
+	// std::cout << "Time Elapsed: " << ((float)endTime - (float)startTime) / CLOCKS_PER_SEC << " seconds" << std::endl;
 	startTime = clock();
 
 	printf("Start calculating the distance...\n");
@@ -507,7 +507,7 @@ int cafe(int argc, char* argv[])
 		//OutputWriter::getInstance()->writeToConsole(outputType, simMat, &vec_namelist);
 		
 		endTime = clock();
-		std::cout << "Time Elapsed: " << ((float)endTime - (float)startTime) / CLOCKS_PER_SEC << " seconds" << std::endl;
+		// std::cout << "Time Elapsed: " << ((float)endTime - (float)startTime) / CLOCKS_PER_SEC << " seconds" << std::endl;
 		startTime = clock();
 	}
 	printf("Finish calculating the distance.\n");
