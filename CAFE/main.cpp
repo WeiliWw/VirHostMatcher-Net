@@ -176,7 +176,8 @@ int cafe(int argc, char* argv[])
 
 	int i_k = 0, i_lowerCnt = 0;
 	OUTPUT_TYPE outputType = PHYLIP;
-	bool singleStrain = true, containChiSq = false, containCvtree = false, jellyfishValid = true;
+    // set jellyfishValid to false
+	bool singleStrain = true, containChiSq = false, containCvtree = false, jellyfishValid = false;
 	std::string str_save_modelDir = "", str_save_vizDir = "", str_outputFileURL = "", str_jellyfishExeURL = "";
 	
 	printf("Start parsing the arguments... \n");
@@ -387,7 +388,8 @@ int cafe(int argc, char* argv[])
 				
 				if (!jellyfishSucceed)
 				{
-					std::cout << "Jellyfish not succeed! Now use slow counting!" << std::endl;
+                    // Remove jellyfish
+					// std::cout << "Jellyfish not succeed! Now use slow counting!" << std::endl;
 					kmerModel->saveFromFasta(currK, vec_fastaFiles[i], str_saveURL);
 				}
 			}
