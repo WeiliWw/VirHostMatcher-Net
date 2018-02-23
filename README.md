@@ -7,7 +7,7 @@ VHiNet is a network-based computational tool for predicting virus-host interacti
     + [Biopython](http://biopython.org/wiki/Download)
     + [pandas](https://pandas.pydata.org/) 
     + [numpy](https://www.scipy.org/scipylib/download.html)
-* [BLAST](ftp://ftp.ncbi.nlm.nih.gov/blast/executables/LATEST/) 
+* [BLAST](https://www.ncbi.nlm.nih.gov/books/NBK52640/) 
 
 ### Installation
 VHiNet requires Python 3.4+. To begin with, install dependencies and make sure the command `blastn` from `BLAST` is added to a directory in `$PATH`. To check directories in `$PATH`, run `echo $PATH`.
