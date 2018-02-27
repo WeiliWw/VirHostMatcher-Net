@@ -3,21 +3,33 @@
 VHiNet is a network-based computational tool for predicting virus-host interactions. Current version predicts hosts of given viruses from a database of 31,986 bacteria candidates. VHiNet has two modes: predicting for complete genomes and predicting for short viral contigs.
 
 ### Dependencies
+
+VHiNet requires Python 3.4+ together with the following packages and `BLAST`.
+
 * Python packages
     + [Biopython](http://biopython.org/wiki/Download)
     + [pandas](https://pandas.pydata.org/) 
     + [numpy](https://www.scipy.org/scipylib/download.html)
 * [BLAST](https://www.ncbi.nlm.nih.gov/books/NBK52640/) 
 
-### Installation
-VHiNet requires Python 3.4+. To begin with, install dependencies and make sure the command `blastn` from `BLAST` is added to a directory in `$PATH`. To check directories in `$PATH`, run `echo $PATH`.
+We recommend to install [Anaconda](https://www.anaconda.com/download/) which comes with current version of Python3 and both `pandas` and `numpy`. After installing Anaconda, simply run
+```
+conda install numpy pandas Biopython
+conda install -c bioconda blast
+``` 
+to install `Biopython` and `BLAST`.
 
-#### Building local dependent modules
+Alternatively, users may want to install Python3 and dependencies manually. In this case, please make sure Python3.X is the default Python version and the command `blastn` from `BLAST` is added to a directory in `$PATH`. To check directories in `$PATH`, run `echo $PATH`.
+
+## Installation
+In addition to dependencies, VHiNet requires to build local modules and download data needed.
+
+### Building local dependent modules
 ##### Linux: 
 ```
 git clone https://github.com/WeiliWw/VHiNet.git 
 cd VhiNet
-python setup.py build_ext 
+CC=gcc python setup.py build_ext 
 python setup.py install --install-platlib=./src/
 ```
 ##### MacOS
@@ -25,7 +37,6 @@ python setup.py install --install-platlib=./src/
 brew install gcc@6
 export CC=gcc-6
 export CXX=g++-6
-
 git clone https://github.com/WeiliWw/VHiNet.git
 cd VHiNet
 python setup.py build_ext 
@@ -42,19 +53,20 @@ At the directory of VHiNet, run
 wget -c http://www-rcf.usc.edu/~weiliw/vhinet/data_vhinet.tar.gz    
 tar xf data_vhinet.tar.gz
 ```
+
 ##### Complete genome mode and short viral contig mode
 At the directory of VHiNet, run
 ```
 wget -c http://www-rcf.usc.edu/~weiliw/vhinet/data_vhinet_short_viral_contig.tar.gz    
 tar xf data_vhinet_short_viral_contig.tar.gz 
 ```
-In MacOS, use `curl` instead to download the data.
+In MacOS, use command `curl` instead to download the data.
 
-##### Required format of query sequences
+#### Required format of query sequences
 VHiNet accepts files in FASTA format(i.e., files with .fasta or .fa suffix.)
 
 
-### Usage 
+## Usage 
     VHiNet.py [-h] -q QUERY_VIRUS_DIR [-t NUM_THREADS] [--short-contig] -o
                  OUTPUT_DIR [-n topN]
 #### Options
@@ -70,8 +82,8 @@ VHiNet accepts files in FASTA format(i.e., files with .fasta or .fa suffix.)
                           All predictions will be output if there is a tie at the
                           highest score. Default = 1
 
-
 ### examples
+
 #### Predict hosts of virus genomes
 ```
 mkdir tmp
@@ -84,3 +96,4 @@ mkdir tmp2
 python VHiNet.py -q test_query2 -t 2 --short-contig -o tmp2 -n 5
 ```
 
+In both modes, VHiNet outputs a prediction file for each query virus into the specified directory. A prediction file is in .csv format where each row represents one candidate host with detailed taxanomic information and prediction score. Matrices of feature values are stored in a subdirectory `feature_values` under the output directory.
