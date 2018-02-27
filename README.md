@@ -12,12 +12,11 @@ VHiNet requires Python 3.4+ together with the following packages and `BLAST`.
     + [numpy](https://www.scipy.org/scipylib/download.html)
 * [BLAST](https://www.ncbi.nlm.nih.gov/books/NBK52640/) 
 
-We recommend to install [Anaconda](https://www.anaconda.com/download/) which comes with current version of Python3 and both `pandas` and `numpy`. After installing Anaconda, simply run
+We recommend to use [Miniconda](https://conda.io/miniconda.html) to install all dependencies. After installing Miniconda, simply run
 ```
 conda install numpy pandas Biopython
 conda install -c bioconda blast
 ``` 
-to install `Biopython` and `BLAST`.
 
 Alternatively, users may want to install Python3 and dependencies manually. In this case, please make sure Python3.X is the default Python version and the command `blastn` from `BLAST` is added to a directory in `$PATH`. To check directories in `$PATH`, run `echo $PATH`.
 
@@ -33,12 +32,13 @@ CC=gcc python setup.py build_ext
 python setup.py install --install-platlib=./src/
 ```
 ##### MacOS
+For MacOS, please use [brew](https://brew.sh/) to install `gcc-6` first.
 ```
 brew install gcc@6
-export CC=gcc-6
-export CXX=g++-6
 git clone https://github.com/WeiliWw/VHiNet.git
 cd VHiNet
+export CC=gcc-6
+export CXX=g++-6
 python setup.py build_ext 
 python setup.py install --install-platlib=./src/
 ```
