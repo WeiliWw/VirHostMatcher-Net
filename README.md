@@ -79,10 +79,10 @@ VHiNet accepts files in FASTA format(i.e., files with .fasta or .fa suffix.)
                           are required in this mode
       -o OUTPUT_DIR       Output directory
       -n topN             Number of top predictions written to the output files.
-                          All predictions will be output if there is a tie at the
-                          highest score. Default = 1
+                          All predictions will be output if there is a tie in 
+                          score. Default = 1
 
-### examples
+### Examples
 
 #### Predict hosts of virus genomes
 ```
@@ -96,4 +96,4 @@ mkdir tmp2
 python VHiNet.py -q test_query2 -t 2 --short-contig -o tmp2 -n 5
 ```
 
-In both modes, VHiNet outputs a prediction file for each query virus into the specified directory. A prediction file is in .csv format where each row represents one candidate host with detailed taxanomic information and prediction score. Matrices of feature values are stored in a subdirectory `feature_values` under the output directory.
+In both modes, VHiNet outputs a prediction file for each query virus to the specified directory. A prediction file is in .csv format where each row represents one candidate host with detailed taxanomic information and prediction score. Matrices of feature values are stored in a subdirectory `feature_values` under the output directory.

@@ -10,7 +10,7 @@ parser.add_argument('-q', dest='query_virus_dir',nargs=1,required=True, help='Di
 parser.add_argument('-t',dest='num_Threads',nargs=1,type=int,default=[1], help='Number of threads (CPUs) to use in the BLAST search. Default = 1')
 parser.add_argument('--short-contig',action='store_true',help='Predict hosts for short viral contigs. WIsH model files are required in this mode')
 parser.add_argument('-o',dest='output_dir',nargs=1,required=True,help='Output directory')
-parser.add_argument('-n',dest='topN',metavar='topN',nargs=1,type=int,default=[1], help='Number of top predictions written to the output files. All predictions will be output if there is a tie at the highest score. Default = 1')
+parser.add_argument('-n',dest='topN',metavar='topN',nargs=1,type=int,default=[1], help='Number of top predictions written to the output files. All predictions will be output if there is a tie in score. Default = 1')
 
 args = parser.parse_args()
 #args = parser.parse_args(['-q','test_query/','-t','8','-o','tmp','--short-contig'])
