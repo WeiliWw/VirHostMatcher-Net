@@ -50,7 +50,7 @@ else:
 predictor.crispr.to_csv(os.path.join(output_dir_features,'feature_values_crispr.csv'))
 predictor.posSV.to_csv(os.path.join(output_dir_features,'feature_values_posSV.csv'))
 predictor.negSV.to_csv(os.path.join(output_dir_features,'feature_values_negSV.csv'))
-
+predictor.blast.to_csv(os.path.join(output_dir_features,'feature_values_blast.csv'))
 
 predictor.getScores()
 
