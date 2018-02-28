@@ -71,7 +71,7 @@ VirHostMatcher-Net accepts files in FASTA format(i.e., files with .fasta or .fa 
 
 
 ## Usage 
-    VirHostMatcher-Net.py [-h] -q QUERY_VIRUS_DIR [-t NUM_THREADS] [--short-contig] -o
+    Python VirHostMatcher-Net.py [-h] -q QUERY_VIRUS_DIR [-t NUM_THREADS] [--short-contig] -o
                  OUTPUT_DIR [-n topN]
 #### Options
       -h, --help          show this help message and exit
