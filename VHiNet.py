@@ -31,6 +31,7 @@ print('Loading packages...')
 
 import pandas as pd    
 from predictor import HostPredictor     
+from Bio.Blast.Applications import NcbiblastnCommandline
 
 predictor = HostPredictor(query_virus_dir, args.short_contig, args.num_Threads[0])
 
