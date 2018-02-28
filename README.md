@@ -1,10 +1,10 @@
 # README
 
-VHiNet is a network-based computational tool for predicting virus-host interactions. Current version predicts hosts of given viruses from a database of 31,986 bacteria candidates. VHiNet has two modes: predicting for complete genomes and predicting for short viral contigs.
+VirHostMatcher-Net is a network-based computational tool for predicting virus-host interactions. Current version predicts hosts of given viruses from a database of 31,986 bacteria candidates. VirHostMatcher-Net has two modes: predicting for complete genomes and predicting for short viral contigs.
 
 ### Dependencies
 
-VHiNet requires Python 3.4+ together with the following packages and `BLAST`.
+VirHostMatcher-Net requires Python 3.4+ together with the following packages and `BLAST`.
 
 * Python packages
     + [Biopython](http://biopython.org/wiki/Download)
@@ -18,16 +18,16 @@ conda install numpy pandas Biopython
 conda install -c bioconda blast
 ``` 
 
-Alternatively, users may want to install Python3 and dependencies manually. In this case, please make sure Python3.X is the default Python version and the command `blastn` from `BLAST` is added to a directory in `$PATH`. To check directories in `$PATH`, run `echo $PATH`.
+Alternatively, users may want to install Python3.X and dependencies manually. In this case, please make sure Python3.X is the default Python version and the command `blastn` from `BLAST` is added to a directory in `$PATH`. To check directories in `$PATH`, run `echo $PATH`.
 
 ## Installation
-In addition to dependencies, VHiNet requires to build local modules and download data needed.
+In addition to dependencies, VirHostMatcher-Net requires to build local modules and download data needed.
 
 ### Building local dependent modules
 ##### Linux: 
 ```
-git clone https://github.com/WeiliWw/VHiNet.git 
-cd VhiNet
+git clone https://github.com/WeiliWw/VirHostMatcher-Net.git 
+cd VirHostMatcher-Net
 CC=gcc python setup.py build_ext 
 python setup.py install --install-platlib=./src/
 ```
@@ -35,8 +35,11 @@ python setup.py install --install-platlib=./src/
 For MacOS, please use [brew](https://brew.sh/) to install `gcc-6` first.
 ```
 brew install gcc@6
-git clone https://github.com/WeiliWw/VHiNet.git
-cd VHiNet
+```
+In case there is a permission issue creating symlink, it can be solved by running `sudo chown -R $(whoami) /usr/local/lib`.
+```
+git clone https://github.com/WeiliWw/VirHostMatcher-Net.git
+cd VirHostMatcher-Net
 export CC=gcc-6
 export CXX=g++-6
 python setup.py build_ext 
@@ -44,30 +47,31 @@ python setup.py install --install-platlib=./src/
 ```
 
 ### Data preparation
-The prediction model of VHiNet depends on a large amount of data: BLAST index files of all bacteria and their CRISPRs, WIsH models(short viral contig mode) and hash files for calculating s<sup>*</sup><sub>2</sub>, etc.
+The prediction model of VirHostMatcher-Net depends on a large amount of data: BLAST index files of all bacteria and their CRISPRs, WIsH models(short viral contig mode) and hash files for calculating s<sup>*</sup><sub>2</sub>, etc.
 
 #### Downloading
+(In MacOS, use command `curl` instead to download the data.)
+
 ##### Complete genome mode alone
-At the directory of VHiNet, run
+At the directory of VirHostMatcher-Net, run
 ```
-wget -c http://www-rcf.usc.edu/~weiliw/vhinet/data_vhinet.tar.gz    
-tar xf data_vhinet.tar.gz
+wget -c http://www-rcf.usc.edu/~weiliw/VirHostMatcher-Net/data_VirHostMatcher-Net_complete_genome_mode_alone.tar.gz    
+tar xf data_VirHostMatcher-Net_complete_genome_mode_alone.tar.gz
 ```
 
 ##### Complete genome mode and short viral contig mode
-At the directory of VHiNet, run
+At the directory of VirHostMatcher-Net, run
 ```
-wget -c http://www-rcf.usc.edu/~weiliw/vhinet/data_vhinet_short_viral_contig.tar.gz    
-tar xf data_vhinet_short_viral_contig.tar.gz 
+wget -c http://www-rcf.usc.edu/~weiliw/VirHostMatcher-Net/data_VirHostMatcher-Net_both_modes.tar.gz    
+tar xf data_VirHostMatcher-Net_both_modes.tar.gz
 ```
-In MacOS, use command `curl` instead to download the data.
 
 #### Required format of query sequences
-VHiNet accepts files in FASTA format(i.e., files with .fasta or .fa suffix.)
+VirHostMatcher-Net accepts files in FASTA format(i.e., files with .fasta or .fa suffix.)
 
 
 ## Usage 
-    VHiNet.py [-h] -q QUERY_VIRUS_DIR [-t NUM_THREADS] [--short-contig] -o
+    VirHostMatcher-Net.py [-h] -q QUERY_VIRUS_DIR [-t NUM_THREADS] [--short-contig] -o
                  OUTPUT_DIR [-n topN]
 #### Options
       -h, --help          show this help message and exit
@@ -86,14 +90,19 @@ VHiNet accepts files in FASTA format(i.e., files with .fasta or .fa suffix.)
 
 #### Predict hosts of virus genomes
 ```
-mkdir tmp
-python VHiNet.py -q test_query -t 2 -o tmp -n 5
+mkdir output
+python VirHostMatcher-Net.py -q test_query -t 2 -o output -n 5
 ```
 
 #### Predict hosts of viral contigs
 ```
-mkdir tmp2
-python VHiNet.py -q test_query2 -t 2 --short-contig -o tmp2 -n 5
+mkdir output2
+python VirHostMatcher-Net.py -q test_query2 -t 2 --short-contig -o output2 -n 5
 ```
 
-In both modes, VHiNet outputs a prediction file for each query virus to the specified directory. A prediction file is in .csv format where each row represents one candidate host with detailed taxanomic information and prediction score. Matrices of feature values are stored in a subdirectory `feature_values` under the output directory.
+In both modes, VirHostMatcher-Net outputs a prediction file for each query virus to the specified directory. A prediction file is in .csv format where each row represents one candidate host with detailed taxanomic information and prediction score. Matrices of feature values are stored in a subdirectory `feature_values` under the output directory.
+
+### Bug reports
+Please open a Github issue or contact Weili Wang weiliw@usc.edu
+
+
