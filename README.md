@@ -67,7 +67,7 @@ tar xf data_VirHostMatcher-Net_both_modes.tar.gz
 ```
 
 #### Required format of query sequences
-VirHostMatcher-Net accepts files in FASTA format(i.e., files with .fasta or .fa suffix.)
+VirHostMatcher-Net accepts files in FASTA format.
 
 
 ## Usage 

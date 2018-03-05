@@ -70,7 +70,7 @@ def blastSingle(item, query_virus_dir, numThreads):
         return ind, df_blast.set_index([[query_name]])
 '''
 def blastSingle(item, query_virus_dir, numThreads):
-    query_name = item.split('.fa')[0]
+    query_name = item.split('.')[0]
     query_file = os.path.join(query_virus_dir, item)
     output_file = os.path.join(output_dir, query_name) + '.blast'
     blast_call = NcbiblastnCommandline(query=query_file,db=db_host_prefix, 
