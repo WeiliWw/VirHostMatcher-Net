@@ -6,14 +6,14 @@ import os
 import math
 import pandas as pd
 from Bio.Blast.Applications import NcbiblastnCommandline
-from .Variables import *
+from .Variables import DB_HOST_CRISPR_PREFIX, TAXA_INFO
 
 '''
 Preset variables and load tables
 '''
 
 db_host_crispr_prefix = DB_HOST_CRISPR_PREFIX 
-output_dir = INTERMEDIATE_RESULT 
+# output_dir = INTERMEDIATE_RESULT 
 taxa_info_file = TAXA_INFO 
 #hash_table_file = HASH_TABLE 
 
@@ -33,7 +33,7 @@ Parameters:
     numThreads
 '''
 
-def crisprSingle(item, query_virus_dir, numThreads):
+def crisprSingle(item, query_virus_dir, output_dir, numThreads):
     query_name = item.split('.')[0]
     query_file = os.path.join(query_virus_dir, item)
     output_file = os.path.join(output_dir, query_name) + '.crispr'
@@ -64,14 +64,20 @@ Parameters:
     query_virus_dir
     numThreads
 '''
-def crispr_calculator(query_virus_dir, numThreads):
+def crispr_calculator(query_virus_dir, output_dir, numThreads):
     query_cont = []
     query_list = os.listdir(query_virus_dir)
+    crispr_output_dir = os.path.join(output_dir, 'CRISPR/')
+    try:
+        os.stat(crispr_output_dir)
+    except:
+        os.mkdir(crispr_output_dir)
     for item in query_list:
         print('----Calculating crispr feature values for ',item,' ----')
-        ind, df = crisprSingle(item, query_virus_dir, numThreads)
+        ind, df = crisprSingle(item, query_virus_dir, crispr_output_dir, numThreads)
         if ind:
             query_cont.append(df)
+    print('----CRISPR intermediate files are stored in ',crispr_output_dir,' ----')
     if query_cont == []:
         return query_cont    # Return an empty list if no match for any queries
     else:

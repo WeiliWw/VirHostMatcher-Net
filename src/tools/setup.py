@@ -12,15 +12,11 @@ for key, value in cfg_vars.items():
 
 
 
-MOD = "tools"
-version = "1.0"
-
-setup(name=MOD, 
-    version = version,
-    ext_modules=[Extension(name = MOD, 
-    sources = ["./src/tools/tools.cpp", "./src/tools/WIsH.cpp", "./src/tools/mm.cpp"], 
+MOD = 'tools'  
+setup(name=MOD, ext_modules=[Extension(MOD, 
+    sources = ["tools.cpp", "WIsH.cpp", "mm.cpp"], 
     # extra_compile_args=['-fPIC','-pthread','-std=c++11'])], 
     extra_compile_args=['-w','-std=c++11'])],
-    include_dirs=[numpy.get_include(),"./src/tools/"]
+    include_dirs=[numpy.get_include()]
     )  
 

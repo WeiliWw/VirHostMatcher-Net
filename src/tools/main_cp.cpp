@@ -8,18 +8,40 @@
 #include <cmath>
 #include <float.h>
 #include <algorithm>
+#include <atomic>
 #include <sstream>
 #include "mm.h"
 #include "main.h"
+#include "ctpl_stl.h"
 
-#ifdef OPENMP
-    #include <omp.h>
-#endif
 
-#define VERBOSITY 3
+// #ifdef OPENMP
+//     #include <omp.h>
+// #endif
+
+#define VERBOSITY 1
+//#define VERBOSITY 3
 
 #define BUILD_COMMAND "build"
 #define PREDICT_COMMAND "predict"
+
+
+void computeLL(int id, int i, std::string modelPath, std::atomic<int>& progressCount, std::vector< std::vector<double>>& ll, std::vector<std::string>& modelNames, std::vector<std::vector<std::string>>& bactGenomes, int modelFileSize, int genomeFileSize){
+   mm model(modelPath,VERBOSITY);
+
+        if (VERBOSITY>2)
+        {
+            progressCount++;
+            std::cout<<"Processing "<<model.getName()<<" (approx. "<<progressCount<<"/"<<modelFileSize<<")"<<std::endl; //model.printParameters();
+        }
+
+        modelNames[i] = model.getName();
+
+        for (size_t j = 0 ; j < genomeFileSize ; j++) {
+            ll[i].push_back(model.evaluate(bactGenomes[j]));
+        }
+
+}
 
 
 void die(std::string text,std::string complement=std::string())
@@ -51,7 +73,7 @@ void build(std::string genomeDir, std::string modelDir, unsigned int order, doub
     }
     closedir (dir);
     
-    #pragma omp parallel for schedule(static)
+    //#pragma omp parallel for schedule(static)
     for (size_t i = 0; i < genomeFiles.size() ; i++)
     {
         mm model(order,alpha,VERBOSITY);
@@ -152,11 +174,15 @@ void predict(std::string genomeDir, std::string modelDir,std::string resultDir, 
     
     std::vector<std::string> modelNames(modelFiles.size(),std::string());
     // Compute log-likelihoods
-    size_t progressCount = 0;
-    #pragma omp parallel for schedule(static)
+    //size_t progressCount = 0;
+    int modelFileSize = modelFiles.size();
+    int genomeFileSize = genomeFiles.size();
+    std::atomic<int> progressCount{0};
+    ctpl::thread_pool p_lklh(threads);
+    //#pragma omp parallel for schedule(static)
     for (size_t i = 0; i < modelFiles.size() ; i++)
     {
-        mm model(modelDir + "/" + modelFiles[i],VERBOSITY);
+    /*    mm model(modelDir + "/" + modelFiles[i],VERBOSITY);
     
         if (VERBOSITY>2)
         {
@@ -169,8 +195,14 @@ void predict(std::string genomeDir, std::string modelDir,std::string resultDir, 
         for (size_t j = 0 ; j < genomeFiles.size() ; j++) {
             ll[i].push_back(model.evaluate(bactGenomes[j]));
         }
-        
+      */
+        std::string modelPath = modelDir + "/" + modelFiles[i];
+        p_lklh.push([i, modelPath,  &progressCount, &ll, &modelNames, &bactGenomes, modelFileSize, genomeFileSize](int id){computeLL(id, i, modelPath,  progressCount, ll, modelNames, bactGenomes, modelFileSize, genomeFileSize);}) ;
     }
+    // End ctpl threads
+    p_lklh.stop(true);
+    // std::cout<< "Pool has ended" << std::endl;
+   
     
     if (writeBestPred)
     {
@@ -280,7 +312,7 @@ when running a prediction.\n";
     // Normalize the log-likelihood to z-scores
     if(zScores)
     {
-        #pragma omp parallel for schedule(static)
+        //#pragma omp parallel for schedule(static)
         for (size_t i = 0; i < modelFiles.size() ; i++)
         {
             double mu = mean(ll[i]);
@@ -318,7 +350,6 @@ when running a prediction.\n";
                 fout << '\t' << ll[i][j];
             }
             fout << std::endl;
-            
         }
         fout.close();
     }
@@ -411,11 +442,11 @@ Example for predicting hosts:\n\n\
     if (printHelp)
     {   
         std::cout<<helpText;
-        #ifdef OPENMP
-            std::cout<<"OpenMP supported."<<std::endl;
-        #else
-            std::cout<<"Compiled *without* OpenMP support."<<std::endl;
-        #endif
+//         #ifdef OPENMP
+//             std::cout<<"OpenMP supported."<<std::endl;
+//         #else
+//             std::cout<<"Compiled *without* OpenMP support."<<std::endl;
+//         #endif
         exit(0);
     }
         

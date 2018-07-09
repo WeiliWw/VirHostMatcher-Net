@@ -6,13 +6,13 @@ genome)
 import os
 import pandas as pd
 from Bio.Blast.Applications import NcbiblastnCommandline
-from .Variables import *
+from .Variables import DB_HOST_PREFIX, HASH_TABLE
 
 '''
 Preset variables and load hash table data
 '''
 db_host_prefix = DB_HOST_PREFIX 
-output_dir = INTERMEDIATE_RESULT 
+# output_dir = INTERMEDIATE_RESULT 
 hash_table_file = HASH_TABLE 
 
 db_host_prefix = os.path.expanduser(db_host_prefix)
@@ -69,7 +69,7 @@ def blastSingle(item, query_virus_dir, numThreads):
         ind = True
         return ind, df_blast.set_index([[query_name]])
 '''
-def blastSingle(item, query_virus_dir, numThreads):
+def blastSingle(item, query_virus_dir, output_dir, numThreads):
     query_name = item.split('.')[0]
     query_file = os.path.join(query_virus_dir, item)
     output_file = os.path.join(output_dir, query_name) + '.blast'
@@ -115,21 +115,26 @@ Parameters:
     numThreads
 '''
     
-def blast_calculator(query_virus_dir, virus_index, host_index, numThreads=1):
+def blast_calculator(query_virus_dir, virus_index, host_index, output_dir, numThreads=1):
+    blast_output_dir = os.path.join(output_dir, 'BLAST/')
+    try:
+        os.stat(blast_output_dir)
+    except:
+        os.mkdir(blast_output_dir)
     query_cont = []
     query_list = os.listdir(query_virus_dir)
     for item in query_list:
         print('----Calculating blast feature values for ',item,' ----')
-        ind, df = blastSingle(item, query_virus_dir, numThreads)
+        ind, df = blastSingle(item, query_virus_dir, blast_output_dir, numThreads)
         if ind:
             query_cont.append(df)
     df_pseudo = pd.DataFrame(index=virus_index, columns=host_index).fillna(0)
     if query_cont == []:
-        print('----Intermediate files were stored at ',output_dir,' ----')
+        print('----BLAST intermediate files are stored in ',blast_output_dir,' ----')
         return df_pseudo   # return a zero matrix if no match
     else:
         query_cont.append(df_pseudo)
-        print('----Intermediate files were stored at ',output_dir,' ----')
+        print('----BLAST intermediate files are stored in ',blast_output_dir,' ----')
         return pd.concat(query_cont).groupby(level=0).sum().fillna(0).loc[virus_index][host_index]
     
     

@@ -1,3 +1,0 @@
-#define OPENMP
-#define WIsH_VERSION_MAJOR 1
-#define WIsH_VERSION_MINOR 0

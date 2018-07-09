@@ -20,7 +20,7 @@ setup(name=MOD,
     ext_modules=[Extension(name = MOD, 
     sources = ["./src/tools/tools.cpp", "./src/tools/WIsH.cpp", "./src/tools/mm.cpp"], 
     # extra_compile_args=['-fPIC','-pthread','-std=c++11'])], 
-    extra_compile_args=['-w','-std=c++11'])],
+    extra_compile_args=['-w','-stdlib=libc++','-std=c++11'])],
     include_dirs=[numpy.get_include(),"./src/tools/"]
     )  
 

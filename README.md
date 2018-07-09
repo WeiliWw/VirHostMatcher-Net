@@ -28,22 +28,13 @@ In addition to dependencies, VirHostMatcher-Net requires to build local modules 
 ```
 git clone https://github.com/WeiliWw/VirHostMatcher-Net.git 
 cd VirHostMatcher-Net
-CC=gcc python setup.py build_ext 
-python setup.py install --install-platlib=./src/
+CC=g++ python setup.py install --install-platlib=./src/
 ```
 ##### MacOS
-For MacOS, please use [brew](https://brew.sh/) to install `gcc-6` first.
-```
-brew install gcc@6
-```
-In case there is a permission issue creating symlink, it can be solved by running `sudo chown -R $(whoami) /usr/local/lib`.
 ```
 git clone https://github.com/WeiliWw/VirHostMatcher-Net.git
 cd VirHostMatcher-Net
-export CC=gcc-6
-export CXX=g++-6
-python setup.py build_ext 
-python setup.py install --install-platlib=./src/
+CC=g++ python setup_macos.py install --install-platlib=./src/
 ```
 
 ### Data preparation
@@ -71,8 +62,8 @@ VirHostMatcher-Net accepts files in FASTA format.
 
 
 ## Usage 
-    Python VirHostMatcher-Net.py [-h] -q QUERY_VIRUS_DIR [-t NUM_THREADS] [--short-contig] -o
-                 OUTPUT_DIR [-n topN]
+    python VirHostMatcher-Net.py [-h] -q QUERY_VIRUS_DIR [-t NUM_THREADS] [--short-contig] -o
+                 OUTPUT_DIR [-n topN] [-i INTERMEDIATE_DIR]
 #### Options
       -h, --help          show this help message and exit
       -q QUERY_VIRUS_DIR  Directory containing query virus genomes with .fasta or
@@ -85,22 +76,24 @@ VirHostMatcher-Net accepts files in FASTA format.
       -n topN             Number of top predictions written to the output files.
                           All predictions will be output if there is a tie in 
                           score. Default = 1
+      -i INTERMEDIATE_DIR  Directory storing intermediate result. Default =
+                          ./intermediate_res                   
 
 ### Examples
 
 #### Predict hosts of virus genomes
 ```
 mkdir output
-python VirHostMatcher-Net.py -q test_query -t 2 -o output -n 5
+python VirHostMatcher-Net.py -q ./test/test_query -o output -i tmp -n 5 -t 8
 ```
 
 #### Predict hosts of viral contigs
 ```
 mkdir output2
-python VirHostMatcher-Net.py -q test_query2 -t 2 --short-contig -o output2 -n 5
+python VirHostMatcher-Net.py -q ./test/test_query2 --short-contig -o output2 -n 5 -t 8
 ```
 
-In both modes, VirHostMatcher-Net outputs a prediction file for each query virus to the specified directory. A prediction file is in .csv format where each row represents one candidate host with detailed taxanomic information and prediction score. Matrices of feature values are stored in a subdirectory `feature_values` under the output directory.
+In both modes, VirHostMatcher-Net outputs a prediction file for each query virus to the specified directory. A prediction file is in .csv format where each row represents one candidate host with detailed taxanomic information and prediction score. Tables of feature values are stored in a subdirectory `feature_values` under the output directory.
 
 ### Bug reports
 Please open a Github issue or contact Weili Wang weiliw@usc.edu
