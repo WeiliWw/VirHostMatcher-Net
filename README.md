@@ -68,8 +68,7 @@ VirHostMatcher-Net accepts files in FASTA format.
       -h, --help          show this help message and exit
       -q QUERY_VIRUS_DIR  Directory containing query virus genomes with .fasta or
                           .fa suffix
-      -t NUM_THREADS      Number of threads (CPUs) to use in the BLAST search.
-                          Default = 1
+      -t NUM_THREADS      Number of threads to use.  Default = 1
       --short-contig      Predict hosts for short viral contigs. WIsH model files
                           are required in this mode
       -o OUTPUT_DIR       Output directory
