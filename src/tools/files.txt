@@ -1,2 +1,0 @@
-/auto/cmb-12/fs3/weiliw/local/anaconda3/lib/python3.6/site-packages/count.cpython-36m-x86_64-linux-gnu.so
-/auto/cmb-12/fs3/weiliw/local/anaconda3/lib/python3.6/site-packages/count-0.0.0-py3.6.egg-info
