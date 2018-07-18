@@ -3,7 +3,7 @@ Generates necessary results of s2star
 '''
 import os
 import pandas as pd
-from sklearn.metrics.pairwise import cosine_similarity
+#from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 #from . import tools
 from .tools import kmer_count
@@ -62,8 +62,12 @@ def get_all_f(Dir, K, order, Reverse, numThreads):
 #    name_list = sequence_list.apply(lambda x: x.rsplit('.', 1)[0]) 
     return f_matrix, name_list
 
-
-
+def cosine_similarity(f1, f2):
+    n1 = np.linalg.norm(f1,axis=1,keepdims=True)
+    n2 = np.linalg.norm(f2,axis=1,keepdims=True)
+    norms = np.dot(f1,f2.T)
+    prod = np.dot(f1,f2.T)
+    return prod/(np.dot(n1,n2.T))
 
 
 '''
