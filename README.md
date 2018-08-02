@@ -34,14 +34,14 @@ CC=g++ python setup.py install --install-platlib=./src/
 ```
 git clone https://github.com/WeiliWw/VirHostMatcher-Net.git
 cd VirHostMatcher-Net
-CC=g++ python setup_macos.py install --install-platlib=./src/
+MACOSX_DEPLOYMENT_TARGET=10.9 CC=g++ python setup.py install --install-platlib=./src/
 ```
 
 ### Data preparation
 The prediction model of VirHostMatcher-Net depends on a large amount of data: BLAST index files of all bacteria and their CRISPRs, WIsH models(short viral contig mode) and hash files for calculating s<sup>*</sup><sub>2</sub>, etc.
 
 #### Downloading
-(In MacOS, use command `curl` instead to download the data.)
+(In MacOS, use command `curl -C` instead to download the data.)
 
 ##### Complete genome mode alone
 At the directory of VirHostMatcher-Net, run
