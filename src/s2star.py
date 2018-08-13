@@ -53,8 +53,8 @@ def get_all_f(Dir, K, order, Reverse, numThreads):
     f_matrix = np.ones((len(sequence_list), 4**K))
     for i, seq in enumerate(sequence_list):
         seqfile = os.path.join(Dir, seq)
-        K_count = np.array(kmer_count(seqfile, K, Reverse, numThreads))
-        M_count = np.array(kmer_count(seqfile, M, Reverse, numThreads))
+        K_count = np.array(kmer_count(seqfile, numThreads, Reverse, K))
+        M_count = np.array(kmer_count(seqfile, numThreads, Reverse, M))
         trans = get_transition(M_count)
         expect = get_expect(M_count, trans, K, M)
         f_matrix[i] = get_f(K_count, expect)

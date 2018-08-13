@@ -27,7 +27,7 @@ def wish_llkd_calculator(query_virus_dir, virus_index, host_index, output_dir, n
 # src.wish.wish_llkd_calculator('test_query/', 8, 'tmp', '/home/rcf-40/weiliw/panasas/v-h-WIsH/host2695_model/')
     print('----Fitting models in WIsH...----')
     tools.wish(query_virus_dir, host_model_dir, output_dir, 'predict', numThreads)
-    print('WIsH calculation finished.')
+    print('----WIsH calculation finished.----')
     llkh = pd.read_table(os.path.join(output_dir, 'llikelihood.matrix'))
     return llkh.T.loc[virus_index][host_index]
 '''

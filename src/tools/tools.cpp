@@ -23,7 +23,7 @@ static PyObject *kmer_count(PyObject *self, PyObject *args)
     int K;
     int Num_Threads;
     bool Reverse;
-    if (!PyArg_ParseTuple(args, "siii", &filename, &K, &Reverse, &Num_Threads))
+    if (!PyArg_ParseTuple(args, "siii", &filename, &Num_Threads, &Reverse, &K))
         return NULL;
     //npy_intp SIZE = pow(4, K);
     //std::vector<int> count_res;
