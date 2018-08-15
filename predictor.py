@@ -52,12 +52,12 @@ class HostPredictor:
             REGRESSION_COEFFICIENTS_SHORT[4]*self.crispr +  \
             REGRESSION_COEFFICIENTS_SHORT[5]*self.blast
         else:
-            score = REGRESSION_COEFFICIENTS_SHORT[0]*pd.DataFrame(index=self._virus_index, columns=self._host_index).fillna(1) +  \
-            REGRESSION_COEFFICIENTS_SHORT[1]*self.s2star +  \
-            REGRESSION_COEFFICIENTS_SHORT[2]*self.posSV +  \
-            REGRESSION_COEFFICIENTS_SHORT[3]*self.negSV +  \
-            REGRESSION_COEFFICIENTS_SHORT[4]*self.crispr +  \
-            REGRESSION_COEFFICIENTS_SHORT[5]*self.blast
+            score = REGRESSION_COEFFICIENTS[0]*pd.DataFrame(index=self._virus_index, columns=self._host_index).fillna(1) +  \
+            REGRESSION_COEFFICIENTS[1]*self.s2star +  \
+            REGRESSION_COEFFICIENTS[2]*self.posSV +  \
+            REGRESSION_COEFFICIENTS[3]*self.negSV +  \
+            REGRESSION_COEFFICIENTS[4]*self.crispr +  \
+            REGRESSION_COEFFICIENTS[5]*self.blast
         self.score = 1- 1/(pd.DataFrame(score, dtype=np.float).apply(np.exp)+1)
         
     def prediction(self, topN):   # return a dictionary of queries
