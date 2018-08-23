@@ -49,6 +49,10 @@ def crisprSingle(item, query_virus_dir, output_dir, numThreads):
         return ind, None
     else:
         query_res = pd.read_table(output_file,header = None)
+        # Sanity check for blastn output format 
+        query_res = query_res[query_res[1].apply(lambda x: x.count("|")) == 2]
+        if query_res.shape[0] == 0:
+            return False, None
         query_res[0] = query_name
         query_res[1] = query_res[1].apply(lambda x: x.split('|')[-2])
         #query_res[1] = [dict_genome[k] for k in list(query_res[1])]
