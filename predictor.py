@@ -43,6 +43,7 @@ class HostPredictor:
         '''
         Output a prediction table
         '''
+        print("Calculating prediction scores...")
         #pred = pd.DataFrame(index=virus_index, columns=host_index).fill
         if self._short:
             score = REGRESSION_COEFFICIENTS_SHORT[0]*pd.DataFrame(index=self._virus_index, columns=self._host_index).fillna(1) +  \
@@ -68,6 +69,7 @@ class HostPredictor:
         '''
         If the highest scores have a tie more than topN, output them all
         '''
+        print("Making predictions...")
         for query in self.score.index:
             query_score = self.score.loc[query]
             topIdx = list()
@@ -78,9 +80,29 @@ class HostPredictor:
                 topNum = len(topIdx)
                 query_score = query_score.drop(idx)
                 #print("size of query: ", query_score.size)
-            taxa = taxa_info.loc[topIdx]
-            taxa['score'] = self.score.loc[query][topIdx]
-            dict_pred[query] = taxa
+            pred = taxa_info.loc[topIdx]
+            pred['score'] = self.score.loc[query][topIdx]
+            if self._short:
+                pred['WIsH_pct'] = self.wish.loc[query].rank(pct=True).loc[topIdx]
+            else:
+                pred['s2star_pct'] = self.s2star.loc[query].rank(pct=True).loc[topIdx]
+            if self.posSV.loc[query].max() == 0:
+                pred['posSV_pct'] = ['NA'] * topNum 
+            else: 
+                pred['posSV_pct'] = self.posSV.loc[query].rank(pct=True).loc[topIdx]
+            if self.negSV.loc[query].max() == 0:
+                pred['negSV_pct'] = ['NA'] * topNum
+            else:     # negative coefficient
+                pred['negSV_pct'] = 1 - self.negSV.loc[query].rank(pct=True).loc[topIdx]
+            if self.crispr.loc[query].max() == 0:
+                pred['crispr_pct'] = ['NA'] * topNum
+            else: 
+                pred['crispr_pct'] = self.crispr.loc[query].rank(pct=True).loc[topIdx]
+            if self.blast.loc[query].max() == 0:
+                pred['blast_pct'] = ['NA'] * topNum
+            else:
+                pred['blast_pct'] = self.blast.loc[query].rank(pct=True).loc[topIdx]
+            dict_pred[query] = pred
         return dict_pred
             
             
