@@ -66,11 +66,11 @@ predictor.negSV.round(4).to_csv(os.path.join(output_dir_features,'feature_values
 predictor.blast.round(5).to_csv(os.path.join(output_dir_features,'feature_values_blast.csv'))
 
 predictor.getScores()
+predictor.prediction(args.topN[0])
 
-dict_pred = predictor.prediction(args.topN[0])
 ## write predictions
-for query,preds in dict_pred.items():
-    preds.to_csv(os.path.join(output_dir_pred, (query+'_prediction.csv')))
+# for query,preds in dict_pred.items():
+#     preds.to_csv(os.path.join(output_dir_pred, (query+'_prediction.csv')))
 
 print('---- Predictions are written to ',output_dir,' ----')
     

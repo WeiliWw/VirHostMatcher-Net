@@ -61,8 +61,8 @@ class HostPredictor:
             REGRESSION_COEFFICIENTS[5]*self.blast
         self.score = 1- 1/(pd.DataFrame(score, dtype=np.float).apply(np.exp)+1)
         
-    def prediction(self, topN):   # return a dictionary of queries
-        dict_pred = {}
+    def prediction(self, topN, output_dir_pred):  
+        # dict_pred = {}
         # read in taxa info:
         taxa_info = pd.read_pickle(TAXA_INFO)
         taxa_info = taxa_info.set_index('hostNCBIName')
@@ -102,8 +102,9 @@ class HostPredictor:
                 pred['blast_pct'] = ['NA'] * topNum
             else:
                 pred['blast_pct'] = self.blast.loc[query].rank(pct=True).loc[topIdx]
-            dict_pred[query] = pred
-        return dict_pred
+            #dict_pred[query] = pred
+            pred.to_csv(os.path.join(output_dir_pred, (query+'_prediction.csv')))
+        #return dict_pred
             
             
         
