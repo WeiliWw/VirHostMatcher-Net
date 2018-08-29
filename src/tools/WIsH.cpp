@@ -359,7 +359,8 @@ when running a prediction.\n";
             fout<<genomeNames[0];
         for (size_t j = 1 ; j < genomeNames.size() ; j++)
         {
-            fout << '\t'<< genomeNames[j];
+            //fout << '\t'<< genomeNames[j];
+            fout << ','<< genomeNames[j];
         }
         fout << std::endl;
         
@@ -368,7 +369,8 @@ when running a prediction.\n";
             fout << modelNames[i];
             for (size_t j = 0 ; j < genomeNames.size() ; j++)
             {
-                fout << '\t' << ll[i][j];
+                //fout << '\t' << ll[i][j];
+                fout << ',' << ll[i][j];
             }
             fout << std::endl;
         }

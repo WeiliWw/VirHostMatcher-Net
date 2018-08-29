@@ -12,7 +12,7 @@ parser.add_argument('-o',dest='output_dir',nargs=1,required=True,help='Output di
 parser.add_argument('-t',dest='num_Threads',nargs=1,type=int,default=[1], help='Number of threads to use. Default = 1')
 parser.add_argument('--short-contig',action='store_true',help='Predict hosts for short viral contigs. WIsH model files are required in this mode')
 parser.add_argument('-n',dest='topN',metavar='topN',nargs=1,type=int,default=[1], help='Number of top predictions written to the output files. All predictions will be output if there is a tie in score. Default = 1')
-parser.add_argument('-i',dest='intermediate_dir',nargs=1, default='./intermediate_res', help='Directory storing intermediate result. Default = ./intermediate_res')
+parser.add_argument('-i',dest='intermediate_dir',nargs=1, default=['./intermediate_res'], help='Directory storing intermediate result. Default = ./intermediate_res')
 
 args = parser.parse_args()
 #args = parser.parse_args(['-q','test_query/','-t','8','-o','tmp','--short-contig'])
@@ -66,7 +66,7 @@ predictor.negSV.round(4).to_csv(os.path.join(output_dir_features,'feature_values
 predictor.blast.round(5).to_csv(os.path.join(output_dir_features,'feature_values_blast.csv'))
 
 predictor.getScores()
-predictor.prediction(args.topN[0])
+predictor.prediction(args.topN[0], output_dir_pred)
 
 ## write predictions
 # for query,preds in dict_pred.items():

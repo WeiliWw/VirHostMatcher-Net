@@ -98,7 +98,7 @@ def blastSingle(item, query_virus_dir, output_dir, numThreads):
         df_blast_positions.index = df_blast_positions.index.droplevel()
         df_blast_perc = df_blast_positions.apply(lambda x: cal_perc(x), 
                                                  axis = 1)/query_len
-        sr_blast = df_blast_perc.groupby(level=0).apply(sum)
+        sr_blast = df_blast_perc.groupby(level=0,sort=False).apply(sum)
         ind = True
         return ind, pd.DataFrame({query_name: sr_blast}).T
     
@@ -133,10 +133,9 @@ def blast_calculator(query_virus_dir, virus_index, host_index, output_dir, numTh
         print('----BLAST intermediate files are stored in ',blast_output_dir,' ----')
         return df_pseudo   # return a zero matrix if no match
     else:
-        query_cont.append(df_pseudo)
+        tmp = pd.concat(query_cont, axis =1, sort=False).groupby(axis=1,level=0,sort=False).sum()
         print('----BLAST intermediate files are stored in ',blast_output_dir,' ----')
-        return pd.concat(query_cont).groupby(level=0).sum().fillna(0).loc[virus_index][host_index]
-    
+        return pd.concat([tmp, df_pseudo],sort=False).groupby(level=0,sort=False).sum().fillna(0).loc[virus_index][host_index] 
     
     
     

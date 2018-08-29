@@ -7,7 +7,7 @@ import math
 import pandas as pd
 from Bio.Blast.Applications import NcbiblastnCommandline
 from .Variables import DB_HOST_CRISPR_PREFIX, TAXA_INFO
-
+from numpy import isnan
 '''
 Preset variables and load tables
 '''
@@ -85,8 +85,7 @@ def crispr_calculator(query_virus_dir, output_dir, numThreads):
     if query_cont == []:
         return query_cont    # Return an empty list if no match for any queries
     else:
-        df_concat = pd.concat(query_cont).groupby(level=0).sum().fillna(0)
-        df_concat.columns = df_concat.columns.levels[1]
+        df_concat = pd.concat(query_cont,axis =1,sort=False).groupby(axis=1,level=1,sort=False).sum().fillna(0)
         return df_concat
     
 '''
@@ -100,13 +99,23 @@ Parameters:
 
 def uniGenus(df_input, virus_index, host_index):
     df_pseudo = pd.DataFrame(index=virus_index, columns=host_index).fillna(0)
-    df_full = pd.concat([df_pseudo, df_input]).groupby(level=0).sum().fillna(0)
+    df_full = pd.concat([df_pseudo, df_input],sort=False).groupby(level=0,sort=False).sum().fillna(0)
     df_full = df_full.loc[virus_index][host_index]
     df_full.loc['hostGenus'] = taxa_info.loc[host_index]['hostGenus']
-    for genera in taxa_info.loc[host_index]['hostGenus'].unique():
-        if pd.notnull(genera):
-            idx = (df_full.loc['hostGenus'] == genera)
-            df_full.loc[virus_index,idx] = df_full.loc[virus_index,idx].max(axis=1)
+    dict_genera = {}
+    for i in df_full:
+        col = df_full[i].rename(None)
+        genus = col['hostGenus']
+        if type(genus) is not str:       # not a genus name
+            if isnan(genus): continue
+        if genus in dict_genera:
+            dict_genera[genus] = pd.concat([dict_genera[genus], col],axis=1,sort=False).max(axis=1)
+        else: dict_genera[genus] = col
+    for i in df_full:
+        genus = df_full[i]['hostGenus']
+        if type(genus) is not str:
+            if isnan(genus): continue
+        df_full[i] = dict_genera[genus] 
     return df_full.loc[virus_index,:]
 '''
 def uniGenus(df_input, host_index):
