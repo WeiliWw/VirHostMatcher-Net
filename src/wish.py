@@ -29,7 +29,6 @@ def wish_llkd_calculator(query_virus_dir, virus_index, host_index, output_dir, n
     tools.wish(query_virus_dir, host_model_dir, output_dir, 'predict', numThreads)
     print('----WIsH calculation finished.----')
     llkh = pd.read_csv(os.path.join(output_dir, 'llikelihood.matrix'),header=0,index_col=0)
-    llkh = llkh.fillna(-1.41)   # very rare cases where WIsH outputs nan, use average score here
     return llkh.T.loc[virus_index][host_index]
 '''
 def wish_llkd_calculator(query_virus_dir, virus_index, host_index, numThreads):
