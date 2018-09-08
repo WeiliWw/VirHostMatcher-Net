@@ -174,7 +174,31 @@ Parameters:
 
 '''
 
-
+#
+#def s2star_caclculator(query_virus_dir, ifShort, numThreads):
+#    mat_original_interaction = pd.read_hdf(tables,'interaction') # 352 by 31k
+#    if ifShort:
+#        print('----Calculation of s2* is split into two parts----')
+#    else:
+#        print('----Calculation of s2* is split into three parts----')
+#    mat_intra_query, mat_query_bench, s2star_query_host = s2_query(query_virus_dir, ifShort, numThreads)
+##         mat_intra_query = intra_query(query_virus_dir)
+##         mat_query_bench = query_bench(query_virus_dir)
+#    host_index = mat_original_interaction.columns
+#    query_index = mat_intra_query.index
+#    virus_index = mat_original_interaction.index.union(query_index)
+#    s2star_query_virus = pd.concat([mat_query_bench,
+#                                    mat_intra_query],sort=False).groupby(level=0,sort=False).sum()
+#    # rearrange df
+#    if not ifShort:
+#        # rearrange df
+#        s2star_query_host = s2star_query_host.loc[query_index, host_index]
+#    s2star_query_virus = s2star_query_virus.loc[query_index, virus_index]
+#    pseudo_interaction = pd.DataFrame(index=virus_index, columns=host_index).fillna(0)
+#    df_interaction = pd.concat([mat_original_interaction,pseudo_interaction]).groupby(level=0).sum().fillna(0)
+#    df_interaction = df_interaction.loc[virus_index][host_index]
+#    return s2star_query_host, s2star_query_virus, df_interaction
+#
 def s2star_caclculator(query_virus_dir, ifShort, numThreads):
     mat_original_interaction = pd.read_hdf(tables,'interaction') # 352 by 31k
     if ifShort:
@@ -182,34 +206,18 @@ def s2star_caclculator(query_virus_dir, ifShort, numThreads):
     else:
         print('----Calculation of s2* is split into three parts----')
     mat_intra_query, mat_query_bench, s2star_query_host = s2_query(query_virus_dir, ifShort, numThreads)
-#         mat_intra_query = intra_query(query_virus_dir)
-#         mat_query_bench = query_bench(query_virus_dir)
     host_index = mat_original_interaction.columns
     query_index = mat_intra_query.index
-    virus_index = mat_original_interaction.index.union(query_index)
+    virus_index = query_index.tolist() + mat_original_interaction.index.tolist()
     s2star_query_virus = pd.concat([mat_query_bench,
-                                    mat_intra_query],sort=False).groupby(level=0,sort=False).sum()
-    # rearrange df
+                                    mat_intra_query]).groupby(level=0).sum().loc[query_index, virus_index]
     if not ifShort:
-        # rearrange df
         s2star_query_host = s2star_query_host.loc[query_index, host_index]
     s2star_query_virus = s2star_query_virus.loc[query_index, virus_index]
     pseudo_interaction = pd.DataFrame(index=virus_index, columns=host_index).fillna(0)
     df_interaction = pd.concat([mat_original_interaction,pseudo_interaction]).groupby(level=0).sum().fillna(0)
     df_interaction = df_interaction.loc[virus_index][host_index]
+    s2star_query_virus.values[[np.arange(s2star_query_virus.shape[0])]*2] = 0
     return s2star_query_host, s2star_query_virus, df_interaction
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
