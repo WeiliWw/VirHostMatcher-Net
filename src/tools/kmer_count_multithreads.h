@@ -12,8 +12,13 @@
 std::atomic<int> X;
 bool VALID = true;
 std::unordered_map<char, int> nuc2num = {
-        {'N', -1}, {'A', 0}, {'C', 1 }, {'G', 2}, {'T', 3}, 
-	{'n', -1}, {'a', 0}, {'c', 1}, {'g', 2}, {'t', 3}
+    {'W',-1}, {'w',-1}, {'S',-1}, {'s',-1}, {'M',-1},
+    {'m',-1}, {'K',-1}, {'k',-1}, {'R',-1}, {'r',-1},
+    {'Y',-1}, {'y',-1}, {'B',-1}, {'b',-1}, {'D',-1},
+    {'d',-1}, {'H',-1}, {'h',-1}, {'V',-1},
+    {'v',-1}, {'N',-1}, {'n',-1},
+    {'N', -1}, {'A', 0}, {'C', 1 }, {'G', 2}, {'T', 3},
+    {'n', -1}, {'a', 0}, {'c', 1}, {'g', 2}, {'t', 3}
 };
 
 int revcomp(int num, int K){
@@ -71,6 +76,7 @@ void count_one_read(int id, int K, std::string one_read, std::vector<std::atomic
 }
 
 std::vector<std::atomic<int>> count(std::string filename, int K, int Num_Threads, bool Reverse) {
+    ::VALID = true;
     const int SIZE = pow(4, K);
     std::vector<std::atomic<int>> count_array(SIZE);
     std::ifstream fs(filename);

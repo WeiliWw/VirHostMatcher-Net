@@ -58,13 +58,15 @@ def get_all_f(Dir, K, order, Reverse, numThreads):
         if K_count[0] == -1:            # sanity check for the fasta files
             print('The query file {} contains invalid chars, please make sure it is a valid fasta file.'.format(seq))
             flag = True
+        if np.sum(K_count) == 0:
+            print('The query file {} is empty, please double check the file.'.format(seq))
+            flag = True
         M_count = np.array(kmer_count(seqfile, numThreads, Reverse, M))
         trans = get_transition(M_count)
         expect = get_expect(M_count, trans, K, M)
         f_matrix[i] = get_f(K_count, expect)
     name_list = [x.rsplit('.', 1)[0] for x in sequence_list]
     if flag: sys.exit('Program terminated. Please check error info above.')
-#    name_list = sequence_list.apply(lambda x: x.rsplit('.', 1)[0]) 
     return f_matrix, name_list
 
 def cosine_similarity(f1, f2):
