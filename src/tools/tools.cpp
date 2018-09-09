@@ -30,7 +30,7 @@ static PyObject *kmer_count(PyObject *self, PyObject *args)
     std::vector<std::atomic<int>> count_array;
     //std::cout<<filename<<std::endl;
     //count_res = count_vector(filename, K, Reverse);
-    count_array = count(filename, K, Reverse, Num_Threads);
+    count_array = count(filename, K, Num_Threads, Reverse);
     //std::cout << SIZE << count_array.size() << std::endl;
     /*
     for (int i=0;i<10;i++){

@@ -5,10 +5,10 @@ import os
 _path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # intercept, s2star/wish, posSV, negSV, crispr, blast
-REGRESSION_COEFFICIENTS = [-0.776248306344647,13.5702494789728,4.13660292137303,
-                            -28.0036136354651,0.113362932853832,2272.12139872957]
-REGRESSION_COEFFICIENTS_SHORT = [28.5829830032408,19.4510165632799,5.94919934186033,-18.0125740170194,0.204405026654165,2889.71611619317]
-
+REGRESSION_COEFFICIENTS = [-0.601798,14.300949,3.470383,
+                            -28.871942,0.259607,5580.161856]
+REGRESSION_COEFFICIENTS_SHORT = [27.808267, 18.964743, 5.592256,
+                            -17.308347, 0.433684, 6321.011951]
 # INTERMEDIATE_RESULT = os.path.join(_path, 'intermediate_res/')
 DB_HOST_PREFIX = os.path.join(_path, 'data/host_db_prefix/hostGenomes.fna')
 DB_HOST_CRISPR_PREFIX = os.path.join(_path, 'data/crispr_db_prefix/allCRISPRs_16429.fna')
