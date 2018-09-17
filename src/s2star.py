@@ -210,7 +210,7 @@ def s2star_caclculator(query_virus_dir, ifShort, numThreads):
     query_index = mat_intra_query.index
     virus_index = query_index.tolist() + mat_original_interaction.index.tolist()
     s2star_query_virus = pd.concat([mat_query_bench,
-                                    mat_intra_query]).groupby(level=0).sum().loc[query_index, virus_index]
+                                    mat_intra_query], sort=False).groupby(level=0, sort=False).sum().loc[query_index, virus_index]
     if not ifShort:
         s2star_query_host = s2star_query_host.loc[query_index, host_index]
     s2star_query_virus = s2star_query_virus.loc[query_index, virus_index]
