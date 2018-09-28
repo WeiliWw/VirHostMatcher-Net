@@ -83,27 +83,35 @@ class HostPredictor:
             pred = taxa_info.loc[topIdx]
             pred['score'] = self.score.loc[query][topIdx]
             if self._short:
-                pred['WIsH_pct'] = self.wish.loc[query].rank(pct=True).loc[topIdx]
+                pred['WIsH_val'] = self.wish.loc[query]
             else:
-                pred['s2star_pct'] = self.s2star.loc[query].rank(pct=True).loc[topIdx]
+                pred['s2star_val'] = self.s2star.loc[query]
+                pred['posSV_val'] = self.posSV.loc[query]
+                pred['negSV_val'] = self.negSV.loc[query]
+                pred['crispr_val'] = self.crispr.loc[query]
+                pred['blast_val'] = self.blast.loc[query]
+            if self._short:
+                pred['WIsH_pct'] = self.wish.loc[query].rank(pct=True, method='min').loc[topIdx]
+            else:
+                pred['s2star_pct'] = self.s2star.loc[query].rank(pct=True, method='min').loc[topIdx]
             if self.posSV.loc[query].max() == 0:
                 pred['posSV_pct'] = ['NA'] * topNum 
             else: 
-                pred['posSV_pct'] = self.posSV.loc[query].rank(pct=True).loc[topIdx]
+                pred['posSV_pct'] = self.posSV.loc[query].rank(pct=True, method='min').loc[topIdx]
             if self.negSV.loc[query].max() == 0:
                 pred['negSV_pct'] = ['NA'] * topNum
             else:     # negative coefficient
-                pred['negSV_pct'] = 1 - self.negSV.loc[query].rank(pct=True).loc[topIdx]
+                pred['negSV_pct'] = 1 - self.negSV.loc[query].rank(pct=True, method='min').loc[topIdx]
             if self.crispr.loc[query].max() == 0:
                 pred['crispr_pct'] = ['NA'] * topNum
             else: 
-                pred['crispr_pct'] = self.crispr.loc[query].rank(pct=True).loc[topIdx]
+                pred['crispr_pct'] = self.crispr.loc[query].rank(pct=True, method='min').loc[topIdx]
             if self.blast.loc[query].max() == 0:
                 pred['blast_pct'] = ['NA'] * topNum
             else:
-                pred['blast_pct'] = self.blast.loc[query].rank(pct=True).loc[topIdx]
+                pred['blast_pct'] = self.blast.loc[query].rank(pct=True, method='min').loc[topIdx]
             #dict_pred[query] = pred
-            pred.to_csv(os.path.join(output_dir_pred, (query+'_prediction.csv')))
+            pred.to_csv(os.path.join(output_dir_pred, (query+'_prediction.csv')), float_format='%.4f')
         #return dict_pred
             
             

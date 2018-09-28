@@ -92,7 +92,7 @@ mkdir output2
 python VirHostMatcher-Net.py -q ./test/test_query2 --short-contig -o output2 -n 5 -t 8
 ```
 
-In both modes, VirHostMatcher-Net outputs a prediction file for each query virus to the specified directory. A prediction file is in .csv format where each row represents one candidate host with detailed taxanomic information and prediction score. The last five column of each prediction file shows the percentile of the feature values among all the candidate hosts(It will be blank if there is no signal for the feature.) Users can check the percentile information to better understand how feature values may or may not contribute to the each prediction. Tables of feature values are stored in a subdirectory `feature_values` under the output directory.
+In both modes, VirHostMatcher-Net outputs a prediction file for each query virus to the specified directory. A prediction file is in .csv format where each row represents one candidate host with detailed taxanomic information, a prediction score, values (*_val) and percentiles (*_pct) of each feature. The percentile of a feature value is calculated based on the values of that feature in all candidate hosts (leaving blank if there is no signal in all candidate hosts for that feature.) Users can check the percentile information to better understand how significant the feature values are for a particular prediction. Tables of feature values are stored in a subdirectory `feature_values` under the output directory.
 
 ### Bug reports
 Please open a Github issue or contact Weili Wang weiliw@usc.edu
