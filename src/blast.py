@@ -69,14 +69,21 @@ def blastSingle(item, query_virus_dir, numThreads):
         ind = True
         return ind, df_blast.set_index([[query_name]])
 '''
-def blastSingle(item, query_virus_dir, output_dir, numThreads):
+def blastSingle(item, query_virus_dir, output_dir, seqid, numThreads):
     query_name = item.split('.')[0]
     query_file = os.path.join(query_virus_dir, item)
     output_file = os.path.join(output_dir, query_name) + '.blast'
-    blast_call = NcbiblastnCommandline(query=query_file,db=db_host_prefix, 
-                                       out=output_file,outfmt="'6 qacc sacc qstart qend qlen'", 
-                                       evalue=0.01,gapopen=10,penalty=-1,reward=1,gapextend=2,
-                                       word_size=11,perc_identity=90,num_threads=numThreads)
+    if seqid is not None:       # specify seqidlist
+        blast_call = NcbiblastnCommandline(query=query_file,db=db_host_prefix,
+                                           out=output_file,outfmt="'6 qacc sacc qstart qend qlen'",
+                                           evalue=0.01,gapopen=10,penalty=-1,reward=1,gapextend=2,
+                                           word_size=11,perc_identity=90,seqidlist=seqid,
+                                           num_threads=numThreads)    
+    else:
+        blast_call = NcbiblastnCommandline(query=query_file,db=db_host_prefix, 
+                                           out=output_file,outfmt="'6 qacc sacc qstart qend qlen'", 
+                                           evalue=0.01,gapopen=10,penalty=-1,reward=1,gapextend=2,
+                                           word_size=11,perc_identity=90,num_threads=numThreads)
     blast_call()
 
     '''
@@ -112,10 +119,11 @@ Parameters:
     query_virus_dir
     virus_index
     host_index
+    genomes: names of genomes of interest (None if all)
     numThreads
 '''
     
-def blast_calculator(query_virus_dir, virus_index, host_index, output_dir, numThreads=1):
+def blast_calculator(query_virus_dir, virus_index, host_index, genomes, output_dir, numThreads=1):
     blast_output_dir = os.path.join(output_dir, 'BLAST/')
     try:
         os.stat(blast_output_dir)
@@ -123,9 +131,19 @@ def blast_calculator(query_virus_dir, virus_index, host_index, output_dir, numTh
         os.mkdir(blast_output_dir)
     query_cont = []
     query_list = os.listdir(query_virus_dir)
+    if genomes is not None:         # creat the seqid list for blast
+        genome_set = set(genomes)
+        seqid_list = []
+        for i in dict_genome:
+            if dict_genome[i] in genome_set:
+                seqid_list.append(i)
+        seqid = os.path.join(output_dir, 'seqid_list.txt') 
+        pd.Series(seqid_list).to_csv(seqid, index=None)
+    else:
+        seqid = None
     for item in query_list:
         print('----Calculating blast feature values for ',item,' ----')
-        ind, df = blastSingle(item, query_virus_dir, blast_output_dir, numThreads)
+        ind, df = blastSingle(item, query_virus_dir, blast_output_dir, seqid, numThreads)
         if ind:
             query_cont.append(df)
     df_pseudo = pd.DataFrame(index=virus_index, columns=host_index).fillna(0)

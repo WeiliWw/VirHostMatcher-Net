@@ -12,7 +12,7 @@ import numpy as np
 import os
 
 class HostPredictor:
-    def __init__(self, query_virus_dir, ifShort, intermediate_dir, numThreads=1):
+    def __init__(self, query_virus_dir, ifShort, intermediate_dir, genome_list, numThreads=1):
         '''
         Attributes calculated:
             s2star, posSV, negSV, crispr, blast, wish
@@ -27,12 +27,23 @@ class HostPredictor:
         self.s2star, self._query_virus, self._df_interaction = src.s2star.s2star_caclculator(query_virus_dir, ifShort, numThreads)
         self.posSV, self.negSV = src.neighborhood.neighborhood_calculator(self._query_virus, self._df_interaction)
         self._virus_index = self._query_virus.index  # query virus index
-        self._host_index = self._df_interaction.columns
+        if genome_list is None:                     # when no genome list specified
+            self._host_index = self._df_interaction.columns
+            genomes = None
+        else:
+            with open(genome_list) as f:
+                genomes = f.readlines()
+            genomes = [i.rstrip() for i in genomes]
+            self.posSV = self.posSV[genomes]
+            self.negSV = self.negSV[genomes]
+            if not ifShort:
+                self.s2star = self.s2star[genomes]
+            self._host_index = genomes
         if ifShort:
             self.wish = src.wish.wish_llkd_calculator(query_virus_dir, self._virus_index, self._host_index, intermediate_dir, numThreads)
         else:
             self.wish = None
-        self.blast = src.blast.blast_calculator(query_virus_dir, self._virus_index, self._host_index, intermediate_dir, numThreads)
+        self.blast = src.blast.blast_calculator(query_virus_dir, self._virus_index, self._host_index, genomes, intermediate_dir, numThreads)
         self._crispr_signals = src.crispr.crispr_calculator(query_virus_dir, intermediate_dir, numThreads)
         self.crispr = src.crispr.uniGenus(self._crispr_signals, self._virus_index, self._host_index)
         # wish , if statement?

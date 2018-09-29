@@ -77,6 +77,8 @@ VirHostMatcher-Net accepts files in FASTA format.
                           score. Default = 1
       -i INTERMEDIATE_DIR  Directory storing intermediate result. Default =
                           ./intermediate_res                   
+      -l GENOME_LIST       Location of the file containing NCBI genome names of
+                           interest
 
 ### Examples
 
@@ -93,6 +95,8 @@ python VirHostMatcher-Net.py -q ./test/test_query2 --short-contig -o output2 -n 
 ```
 
 In both modes, VirHostMatcher-Net outputs a prediction file for each query virus to the specified directory. A prediction file is in .csv format where each row represents one candidate host with detailed taxanomic information, a prediction score, values (*_val) and percentiles (*_pct) of each feature. The percentile of a feature value is calculated based on the values of that feature in all candidate hosts (leaving blank if there is no signal in all candidate hosts for that feature.) Users can check the percentile information to better understand how significant the feature values are for a particular prediction. Tables of feature values are stored in a subdirectory `feature_values` under the output directory.
+
+A user can use a subset of hosts for prediction by the option `-l` to specify the file containing the NCBI names. Two example lists of 3529 marine hosts and 359 HMP hosts can be found in the directory `genome_list`. 
 
 ### Bug reports
 Please open a Github issue or contact Weili Wang weiliw@usc.edu
