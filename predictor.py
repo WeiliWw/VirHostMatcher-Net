@@ -112,7 +112,7 @@ class HostPredictor:
             if self.negSV.loc[query].max() == 0:
                 pred['negSV_pct'] = ['NA'] * topNum
             else:     # negative coefficient
-                pred['negSV_pct'] = 1 - self.negSV.loc[query].rank(pct=True, method='min').loc[topIdx]
+                pred['negSV_pct'] = 1 - self.negSV.loc[query].rank(pct=True, method='max').loc[topIdx]
             if self.crispr.loc[query].max() == 0:
                 pred['crispr_pct'] = ['NA'] * topNum
             else: 

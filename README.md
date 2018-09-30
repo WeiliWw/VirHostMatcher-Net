@@ -94,9 +94,9 @@ mkdir output2
 python VirHostMatcher-Net.py -q ./test/test_query2 --short-contig -o output2 -n 5 -t 8
 ```
 
-In both modes, VirHostMatcher-Net outputs a prediction file for each query virus to the specified directory. A prediction file is in .csv format where each row represents one candidate host with detailed taxanomic information, a prediction score, values (*_val) and percentiles (*_pct) of each feature. The percentile of a feature value is calculated based on the values of that feature in all candidate hosts (leaving blank if there is no signal in all candidate hosts for that feature.) Users can check the percentile information to better understand how significant the feature values are for a particular prediction. Tables of feature values are stored in a subdirectory `feature_values` under the output directory.
+In both modes, VirHostMatcher-Net outputs a prediction file for each query virus to the specified directory. A prediction file is in .csv format where each row represents one candidate host with detailed taxanomic information, a prediction score, values (*_val) and percentiles (*_pct) of each feature. The feature percentile of a virus-host pair is defined as the percentile of this feature score among all scores between that virus and all the candidate hosts. A very high percentile (i.e. >95%) suggests significance of the feature on contributing to the prediction. In the output, the percentile of SV<sub>-</sub>, with a negative coefficient, is reversed to keep consistent with other feature percentiles. Tables of feature values are stored in a subdirectory `feature_values` under the output directory.
 
-A user can use a subset of hosts for prediction by the option `-l` to specify the file containing the NCBI names. Two example lists of 3529 marine hosts and 359 HMP hosts can be found in the directory `genome_list`. 
+A user can use a subset of candidate hosts for prediction by the option `-l` to specify the NCBI genome names. Two example lists of 3529 marine hosts and 359 HMP hosts can be found in the directory `genome_list`. 
 
 ### Bug reports
 Please open a Github issue or contact Weili Wang weiliw@usc.edu
