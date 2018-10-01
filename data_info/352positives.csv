@@ -1,0 +1,353 @@
+phageName,phageNCBIName,hostName,hostNCBIName,hostSuperkingdom,hostPhylum,hostClass,hostOrder,hostFamily,hostGenus,hostSpecies
+Aggregatibacter phage S1249,GQ866233,Aggregatibacter actinomycetemcomitans D11S-1,CP001733.1,Bacteria,Proteobacteria,Gammaproteobacteria,Pasteurellales,Pasteurellaceae,Aggregatibacter,Aggregatibacter actinomycetemcomitans
+Agrobacterium phage 7-7-1,JQ312117,Agrobacterium sp. H13-3,NC_015183.1,Bacteria,Proteobacteria,Alphaproteobacteria,Rhizobiales,Rhizobiaceae,Agrobacterium,
+Alteromonas phage vB_AmaP_AD45-P4,KF005319,Alteromonas macleodii str. 'Balearic Sea AD45',NC_018679.1,Bacteria,Proteobacteria,Gammaproteobacteria,Alteromonadales,Alteromonadaceae,Alteromonas,Alteromonas macleodii
+Alteromonas phage vB_AmaP_AD45-P2,KF005320,Alteromonas macleodii str. 'Balearic Sea AD45',NC_018679.1,Bacteria,Proteobacteria,Gammaproteobacteria,Alteromonadales,Alteromonadaceae,Alteromonas,Alteromonas macleodii
+Alteromonas phage vB_AmaP_AD45-P1,KF005317,Alteromonas macleodii str. 'Balearic Sea AD45',NC_018679.1,Bacteria,Proteobacteria,Gammaproteobacteria,Alteromonadales,Alteromonadaceae,Alteromonas,Alteromonas macleodii
+Alteromonas phage vB_AmaP_AD45-P3,KF005318,Alteromonas macleodii str. 'Balearic Sea AD45',NC_018679.1,Bacteria,Proteobacteria,Gammaproteobacteria,Alteromonadales,Alteromonadaceae,Alteromonas,Alteromonas macleodii
+Bacillus phage phiNIT1,AP013029,Bacillus subtilis subsp. natto BEST195,NC_017196.2,Bacteria,Firmicutes,Bacilli,Bacillales,Bacillaceae,Bacillus,Bacillus subtilis
+Bacillus phage phIS3501,JQ062992,Bacillus thuringiensis serovar israelensis ATCC 35646,AAJM01,Bacteria,Firmicutes,Bacilli,Bacillales,Bacillaceae,Bacillus,Bacillus thuringiensis
+Burkholderia phage BcepNY3,EF602154,Burkholderia cenocepacia HI2424,NC_008542.1,Bacteria,Proteobacteria,Betaproteobacteria,Burkholderiales,Burkholderiaceae,Burkholderia,Burkholderia cenocepacia
+Caulobacter phage Cr30,KF301602,Caulobacter crescentus CB15,NC_002696.2,Bacteria,Proteobacteria,Alphaproteobacteria,Caulobacterales,Caulobacteraceae,Caulobacter,Caulobacter vibrioides
+Caulobacter phage phiCbK,JX163858,Caulobacter crescentus CB15,NC_002696.2,Bacteria,Proteobacteria,Alphaproteobacteria,Caulobacterales,Caulobacteraceae,Caulobacter,Caulobacter vibrioides
+Cellulophaga phage phi13:2,KC821633,Cellulophaga baltica 13,ATLH01,Bacteria,Bacteroidetes,Flavobacteriia,Flavobacteriales,Flavobacteriaceae,Cellulophaga,Cellulophaga baltica
+Cellulophaga phage phi13:1,KC821625,Cellulophaga baltica 13,ATLH01,Bacteria,Bacteroidetes,Flavobacteriia,Flavobacteriales,Flavobacteriaceae,Cellulophaga,Cellulophaga baltica
+Cellulophaga phage phi18:4,KC821628,Cellulophaga baltica 18,NZ_CP009976.1,Bacteria,Bacteroidetes,Flavobacteriia,Flavobacteriales,Flavobacteriaceae,Cellulophaga,Cellulophaga baltica
+Cellulophaga phage phi18:3,KC821620,Cellulophaga baltica 18,NZ_CP009976.1,Bacteria,Bacteroidetes,Flavobacteriia,Flavobacteriales,Flavobacteriaceae,Cellulophaga,Cellulophaga baltica
+Cellulophaga phage phi18:1,KC821619,Cellulophaga baltica 18,NZ_CP009976.1,Bacteria,Bacteroidetes,Flavobacteriia,Flavobacteriales,Flavobacteriaceae,Cellulophaga,Cellulophaga baltica
+Cellulophaga phage phi18:2,KC821627,Cellulophaga baltica 18,NZ_CP009976.1,Bacteria,Bacteroidetes,Flavobacteriia,Flavobacteriales,Flavobacteriaceae,Cellulophaga,Cellulophaga baltica
+Cellulophaga phage phi4:1,KC821632,Cellulophaga baltica 4,ATLG01,Bacteria,Bacteroidetes,Flavobacteriia,Flavobacteriales,Flavobacteriaceae,Cellulophaga,Cellulophaga baltica
+Cellulophaga phage phi38:2,KC821629,Cellulophaga baltica NN016038,NZ_CP009887.1,Bacteria,Bacteroidetes,Flavobacteriia,Flavobacteriales,Flavobacteriaceae,Cellulophaga,Cellulophaga baltica
+Cellulophaga phage phi38:1,KC821614,Cellulophaga baltica NN016038,NZ_CP009887.1,Bacteria,Bacteroidetes,Flavobacteriia,Flavobacteriales,Flavobacteriaceae,Cellulophaga,Cellulophaga baltica
+Chlamydia phage CPAR39,AE002163,Chlamydophila pneumoniae AR39,NC_002179.2,Bacteria,Chlamydiae,Chlamydiia,Chlamydiales,Chlamydiaceae,Chlamydia,Chlamydia pneumoniae
+Clostridium phage phiSM101,CP000315,Clostridium perfringens SM101,CP000312.1,Bacteria,Firmicutes,Clostridia,Clostridiales,Clostridiaceae,Clostridium,Clostridium perfringens
+Colwellia phage 9A,HQ317390,Colwellia psychrerythraea 34H,NC_003910.7,Bacteria,Proteobacteria,Gammaproteobacteria,Alteromonadales,Colwelliaceae,Colwellia,Colwellia psychrerythraea
+Croceibacter phage P2559S,JQ867099,Croceibacter atlanticus HTCC2559,NC_014230.1,Bacteria,Bacteroidetes,Flavobacteriia,Flavobacteriales,Flavobacteriaceae,Croceibacter,Croceibacter atlanticus
+Croceibacter phage P2559Y,KC688701,Croceibacter atlanticus HTCC2559,NC_014230.1,Bacteria,Bacteroidetes,Flavobacteriia,Flavobacteriales,Flavobacteriaceae,Croceibacter,Croceibacter atlanticus
+Cronobacter phage vB_CskP_GAP227,KC107834,Cronobacter muytjensii ATCC 51329,AJKU01,Bacteria,Proteobacteria,Gammaproteobacteria,Enterobacteriales,Enterobacteriaceae,Cronobacter,Cronobacter muytjensii
+Enterococcus phage EF62phi,CP002495,Enterococcus faecalis 62,CP002491.1,Bacteria,Firmicutes,Bacilli,Lactobacillales,Enterococcaceae,Enterococcus,Enterococcus faecalis
+Escherichia phage Lw1,KC801932,Escherichia coli BL21(DE3),NC_012971.2,Bacteria,Proteobacteria,Gammaproteobacteria,Enterobacteriales,Enterobacteriaceae,Escherichia,Escherichia coli
+Enterobacteria phage DE3,EU078592,Escherichia coli BL21(DE3),NC_012971.2,Bacteria,Proteobacteria,Gammaproteobacteria,Enterobacteriales,Enterobacteriaceae,Escherichia,Escherichia coli
+Escherichia phage phiEB49,JF770475,Escherichia coli CFT073,AE014075.1,Bacteria,Proteobacteria,Gammaproteobacteria,Enterobacteriales,Enterobacteriaceae,Escherichia,Escherichia coli
+Enterobacteria phage N4,EF056009,Escherichia coli K-12,NZ_CP009789.1,Bacteria,Proteobacteria,Gammaproteobacteria,Enterobacteriales,Enterobacteriaceae,Escherichia,Escherichia coli
+Escherichia phage HK75,HM173637,Escherichia coli K-12,NZ_CP009789.1,Bacteria,Proteobacteria,Gammaproteobacteria,Enterobacteriales,Enterobacteriaceae,Escherichia,Escherichia coli
+Halovirus PH1,KC252997,Haloarcula hispanica ATCC 33960,NC_015948.1,Archaea,Euryarchaeota,Halobacteria,Halobacteriales,Halobacteriaceae,Haloarcula,Haloarcula hispanica
+Haloarcula hispanica pleomorphic virus 2,KF056323,Haloarcula hispanica ATCC 33960,NC_015948.1,Archaea,Euryarchaeota,Halobacteria,Halobacteriales,Halobacteriaceae,Haloarcula,Haloarcula hispanica
+Helicobacter phage phiHP33,JF734911,Helicobacter pylori B45,AFAO01,Bacteria,Proteobacteria,Epsilonproteobacteria,Campylobacterales,Helicobacteraceae,Helicobacter,Helicobacter pylori
+Lactobacillus phage A2,AJ251789,Lactobacillus casei subsp. casei ATCC 393,NZ_AP012544.1,Bacteria,Firmicutes,Bacilli,Lactobacillales,Lactobacillaceae,Lactobacillus,Lactobacillus casei
+Lactobacillus phage phiLdb,KF188410,Lactobacillus delbrueckii subsp. bulgaricus ATCC 11842 = JCM 1002,NC_008054.1,Bacteria,Firmicutes,Bacilli,Lactobacillales,Lactobacillaceae,Lactobacillus,Lactobacillus delbrueckii
+Lactococcus lactis phage p2,GQ979703,Lactococcus lactis subsp. cremoris MG1363,NC_009004.1,Bacteria,Firmicutes,Bacilli,Lactobacillales,Streptococcaceae,Lactococcus,Lactococcus lactis
+Mycobacterium phage RedRock,GU339467,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Hamulus,KF024723,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Trouble,KF024724,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Whirlwind,KF024725,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Sarfire,KF024726,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Reprobate,KF024727,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Muddy,KF024728,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage KayaCho,KF024729,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Dylan,KF024730,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Crossroads,KF024731,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Malithi,KP027200,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage LRRHood,GQ303262,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage ET08,GQ303260,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Dandelion,JN412588,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage LinStu,JN412592,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Pleione,JN624850,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage MoMoMixon,JN699626,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Nappy,JN699627,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Astraea,KC691257,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Gizmo,KC748968,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage ArcherS7,KC748970,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Colbert,GQ303259,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage HH92,KJ538722,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage island3,HM152765,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Angel,FJ973624,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Peaches,GQ303263,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage MeeZee,JN243856,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Sabertooth,JX307703,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage TiroTheta9,JN561150,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Flux,JQ809701,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Dhanush,KC661271,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Medusa,KF024733,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage BellusTerra,KF841475,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Eagle,HM152766,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Audrey,KJ194581,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Akoma,JN699006,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Nova,JN699014,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Breezona,KC691254,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage ShiVal,KC576784,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Zapner,KJ567041,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Contagion,KF024732,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Gaia,KJ567043,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Cerasum,KM215148,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Minerva,KM101123,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Trike,KM101120,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Inventum,KM066034,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage BuzzLyseyear,KM347889,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Estave1,KM279937,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Alvin,KP027205,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Keshu,KP027199,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Milly,KP027206,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Sbash,KP027201,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Methuselah,KC661272,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Puhltonio,GQ303264,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Solon,EU826470,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Brujita,FJ168659,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Butterscotch,FJ168660,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Gumball,FJ168661,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Troll4,FJ168662,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Fruitloop,FJ174690,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Konstantine,FJ174691,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Pacc40,FJ174692,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Ramsey,FJ174693,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Chah,FJ174694,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Phlyer,FJ641182,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Hope,GQ303261,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Shaka,JF792674,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage SkiPole,GU247132,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Angelica,HM152764,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage CrimD,HM152767,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Melvin,KF841476,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage LeBron,HM152763,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Faith1,JF744988,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Suffolk,KF713485,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Doom,JN153085,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Euphoria,JN153086,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Oline,JN192463,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Thibault,JN201525,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Charlie,JN256079,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Larva,JN243855,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Wile,JN243857,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Lilac,JN382248,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Trixie,JN408461,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Turbido,JN408460,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage GUmbie,JN398368,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage RidgeCB,JN398369,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Drago,JN542517,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Liefie,JN412593,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Patience,JN412589,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage BigNuz,JN412591,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Perseus,JN572689,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage AnnaL29,KF024721,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Redi,JN624851,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage BarrelRoll,JN643714,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Dreamboat,JN660814,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Rumpelstiltskin,JN680858,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Violet,JN687951,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Vista,JN699008,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Acadian,JN699007,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Heathcliff,KJ194584,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Alma,JN699005,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Babsiella,JN699001,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage BillKnuckles,JN699000,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Blue7,JN698999,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Bruns,JN698998,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Courthouse,JN698997,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage DeadP,JN698996,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Dori,JN698995,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Gadjet,JN698992,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Kugel,JN699016,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage LHTSCC,JN699015,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Obama12,KF959563,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage SG4,JN699012,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Firecracker,JN698993,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage JacAttac,JN698989,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Stinger,JN699011,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Avani,JQ809702,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Aeneas,JQ809703,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage SWU1,JF946695,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Taj,JX121091,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Butters,KC576783,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage PegLeg,KC900379,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage CASbig,KC701493,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage WIVsmall,KC736071,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Winky,KC661276,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Dumbo,KC691255,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Fishburne,KC691256,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Newman,KC691258,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage HINdeR,KC661275,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Job42,KC661280,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Jobu08,KC661281,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage PattyP,KC661273,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Phrux,KC661277,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage SDcharge11,KC661274,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Severus,KC661279,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage SiSi,KC661278,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Phaux,KC748969,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Murphy,KC748971,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Bobi,KF114874,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Redno2,KF114875,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Wanda,KF006818,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage LittleCherry,KF017001,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Catdawg,KF017002,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Jabbawokkie,KF017003,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacteriophage Velveteen,KF017004,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacteriophage Daenerys,KF017005,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Mosby,KF493883,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Adawi,KF279411,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Bane1,KF279412,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Bane2,KF279413,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Fredward,KF279414,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage PhrostyMug,KF279415,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage SargentShorty9,KF279416,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Quink,KF279417,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage DrDrey,KF306380,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Wheeler,KF416340,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Phelemich,KF416341,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Papyrus,KF416342,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Goku,KF416343,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Adzzy,KF416344,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Bruin,KF562099,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Nala,KF562101,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage PhatBacter,KF562102,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Artemis2UCLA,KF560333,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage CloudWang3,KF560332,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Conspiracy,KF560330,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Graduation,KF560331,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Zaka,KF560334,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Validus,KF713486,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage EagleEye,KF861510,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Donovan,KF841477,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Bernardo,KF493879,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage HanShotFirst,KF493880,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage JAMaL,KF493881,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Jovo,KF493882,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage HufflyPuff,KF562100,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Echild,KF981601,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Nyxis,KF954506,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage MichelleMyBell,KF986246,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Oaker,KF986247,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Saal,KJ025956,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Hawkeye,KJ194582,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Seabiscuit,KJ194585,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Alsfro,KJ174156,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Soto,KJ174157,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage RhynO,KJ156985,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Lamina13,KJ409696,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage MosMoris,KJ538721,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Manad,KJ595576,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Bernal13,KJ510413,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Kampy,KJ510414,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Phantastic,KJ510415,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage ZoeJ,KJ510412,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Damien,KJ567046,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage OkiRoe,KJ567042,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Pinto,KJ690250,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Wee,HQ728524,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage First,JX899358,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage 20ES,KJ410132,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Jolie2,KJ410133,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage CRB1,KJ410134,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Sparky,KM083128,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Hades,KM101122,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Mycobacterium phage Squirty,KM101124,Mycobacterium smegmatis str. MC2 155,NZ_CP009494.1,Bacteria,Actinobacteria,Actinobacteria,Corynebacteriales,Mycobacteriaceae,Mycobacterium,Mycobacterium smegmatis
+Oenococcus phage phiS11,KF183314,Oenococcus oeni S11,AZJX01,Bacteria,Firmicutes,Bacilli,Lactobacillales,Leuconostocaceae,Oenococcus,Oenococcus oeni
+Oenococcus phage phiS13,KF183315,Oenococcus oeni S13,AZKB01,Bacteria,Firmicutes,Bacilli,Lactobacillales,Leuconostocaceae,Oenococcus,Oenococcus oeni
+Pectobacterium phage phiTE,JQ015307,Pectobacterium atrosepticum SCRI1043,NC_004547.2,Bacteria,Proteobacteria,Gammaproteobacteria,Enterobacteriales,Enterobacteriaceae,Pectobacterium,Pectobacterium atrosepticum
+Pelagibacter phage HTVC008M,KC465899,Candidatus Pelagibacter ubique HTCC1062,NC_007205.1,Bacteria,Proteobacteria,Alphaproteobacteria,,,Candidatus Pelagibacter,Candidatus Pelagibacter ubique
+Pelagibacter phage HTVC010P,KC465898,Candidatus Pelagibacter ubique HTCC1062,NC_007205.1,Bacteria,Proteobacteria,Alphaproteobacteria,,,Candidatus Pelagibacter,Candidatus Pelagibacter ubique
+Pelagibacter phage HTVC011P,KC465900,Candidatus Pelagibacter ubique HTCC1062,NC_007205.1,Bacteria,Proteobacteria,Alphaproteobacteria,,,Candidatus Pelagibacter,Candidatus Pelagibacter ubique
+Pelagibacter phage HTVC019P,KC465901,Candidatus Pelagibacter ubique HTCC1062,NC_007205.1,Bacteria,Proteobacteria,Alphaproteobacteria,,,Candidatus Pelagibacter,Candidatus Pelagibacter ubique
+Prochlorococcus phage P-GSP1,HQ332140,Prochlorococcus marinus subsp. pastoris str. CCMP1986,NC_005072.1,Bacteria,Cyanobacteria,,Prochlorales,Prochlorococcaceae,Prochlorococcus,Prochlorococcus marinus
+Prochlorococcus phage P-SSP3,HQ332137,Prochlorococcus marinus str. MIT 9312,NC_007577.1,Bacteria,Cyanobacteria,,Prochlorales,Prochlorococcaceae,Prochlorococcus,Prochlorococcus marinus
+Prochlorococcus phage P-SSP6,HQ634152,Prochlorococcus marinus str. MIT 9515,NC_008817.1,Bacteria,Cyanobacteria,,Prochlorales,Prochlorococcaceae,Prochlorococcus,Prochlorococcus marinus
+Prochlorococcus phage P-SSM5,HQ632825,Prochlorococcus marinus str. NATL2A,NC_007335.2,Bacteria,Cyanobacteria,,Prochlorales,Prochlorococcaceae,Prochlorococcus,Prochlorococcus marinus
+Prochlorococcus phage P-SSM3,HQ337021,Prochlorococcus marinus str. NATL2A,NC_007335.2,Bacteria,Cyanobacteria,,Prochlorales,Prochlorococcaceae,Prochlorococcus,Prochlorococcus marinus
+Prochlorococcus phage P-SSP10,HQ337022,Prochlorococcus marinus str. NATL2A,NC_007335.2,Bacteria,Cyanobacteria,,Prochlorales,Prochlorococcaceae,Prochlorococcus,Prochlorococcus marinus
+Cyanophage SS120-1,HQ316584,Prochlorococcus marinus subsp. marinus str. CCMP1375,NC_005042.1,Bacteria,Cyanobacteria,,Prochlorales,Prochlorococcaceae,Prochlorococcus,Prochlorococcus marinus
+Cyanophage MED4-117,JF974321,Prochlorococcus marinus subsp. pastoris str. CCMP1986,NC_005072.1,Bacteria,Cyanobacteria,,Prochlorales,Prochlorococcaceae,Prochlorococcus,Prochlorococcus marinus
+Cyanophage MED4-184,JF974286,Prochlorococcus marinus subsp. pastoris str. CCMP1986,NC_005072.1,Bacteria,Cyanobacteria,,Prochlorales,Prochlorococcaceae,Prochlorococcus,Prochlorococcus marinus
+Cyanophage MED4-213,HQ634174,Prochlorococcus marinus subsp. pastoris str. CCMP1986,NC_005072.1,Bacteria,Cyanobacteria,,Prochlorales,Prochlorococcaceae,Prochlorococcus,Prochlorococcus marinus
+Cyanophage P-RSM1,HQ634175,Prochlorococcus marinus str. MIT 9303,NC_008820.1,Bacteria,Cyanobacteria,,Prochlorales,Prochlorococcaceae,Prochlorococcus,Prochlorococcus marinus
+Cyanophage PSS2,GQ334450,Prochlorococcus marinus str. MIT 9313,NC_005071.1,Bacteria,Cyanobacteria,,Prochlorales,Prochlorococcaceae,Prochlorococcus,Prochlorococcus marinus
+Cyanophage P-RSM3,HQ634176,Prochlorococcus marinus str. NATL2A,NC_007335.2,Bacteria,Cyanobacteria,,Prochlorales,Prochlorococcaceae,Prochlorococcus,Prochlorococcus marinus
+Cyanophage P-RSM6,HQ634193,Prochlorococcus marinus str. NATL2A,NC_007335.2,Bacteria,Cyanobacteria,,Prochlorales,Prochlorococcaceae,Prochlorococcus,Prochlorococcus marinus
+Prochlorococcus phage P-HM2,GU075905,Prochlorococcus marinus subsp. pastoris str. CCMP1986,NC_005072.1,Bacteria,Cyanobacteria,,Prochlorales,Prochlorococcaceae,Prochlorococcus,Prochlorococcus marinus
+Prochlorococcus phage P-HM1,GU071101,Prochlorococcus marinus subsp. pastoris str. CCMP1986,NC_005072.1,Bacteria,Cyanobacteria,,Prochlorales,Prochlorococcaceae,Prochlorococcus,Prochlorococcus marinus
+Prochlorococcus phage P-RSM4,GU071099,Prochlorococcus marinus str. MIT 9303,NC_008820.1,Bacteria,Cyanobacteria,,Prochlorales,Prochlorococcaceae,Prochlorococcus,Prochlorococcus marinus
+Cyanophage 9515-10a,GU071100,Prochlorococcus marinus str. MIT 9515,NC_008817.1,Bacteria,Cyanobacteria,,Prochlorales,Prochlorococcaceae,Prochlorococcus,Prochlorococcus marinus
+Prochlorococcus phage P-SSM2,AY939844,Prochlorococcus marinus str. NATL1A,NC_008819.1,Bacteria,Cyanobacteria,,Prochlorales,Prochlorococcaceae,Prochlorococcus,Prochlorococcus marinus
+Prochlorococcus phage P-SSM7,GU071103,Prochlorococcus marinus str. NATL1A,NC_008819.1,Bacteria,Cyanobacteria,,Prochlorales,Prochlorococcaceae,Prochlorococcus,Prochlorococcus marinus
+Cyanophage NATL1A-7,GU071102,Prochlorococcus marinus str. NATL1A,NC_008819.1,Bacteria,Cyanobacteria,,Prochlorales,Prochlorococcaceae,Prochlorococcus,Prochlorococcus marinus
+Prochlorococcus phage P-SSM4,AY940168,Prochlorococcus marinus str. NATL2A,NC_007335.2,Bacteria,Cyanobacteria,,Prochlorales,Prochlorococcaceae,Prochlorococcus,Prochlorococcus marinus
+Cyanophage NATL2A-133,GU071104,Prochlorococcus marinus str. NATL2A,NC_007335.2,Bacteria,Cyanobacteria,,Prochlorales,Prochlorococcaceae,Prochlorococcus,Prochlorococcus marinus
+Providencia phage Redjac,JX296113,Providencia stuartii MRSN 2154,NC_017731.1,Bacteria,Proteobacteria,Gammaproteobacteria,Enterobacteriales,Enterobacteriaceae,Providencia,Providencia stuartii
+Pseudomonas phage MP22,DQ873690,Pseudomonas aeruginosa PA14,ASWV01,Bacteria,Proteobacteria,Gammaproteobacteria,Pseudomonadales,Pseudomonadaceae,Pseudomonas,Pseudomonas aeruginosa
+Pseudomonas phage MP29,EU272036,Pseudomonas aeruginosa PA14,ASWV01,Bacteria,Proteobacteria,Gammaproteobacteria,Pseudomonadales,Pseudomonadaceae,Pseudomonas,Pseudomonas aeruginosa
+Pseudomonas phage MP38,EU272037,Pseudomonas aeruginosa PA14,ASWV01,Bacteria,Proteobacteria,Gammaproteobacteria,Pseudomonadales,Pseudomonadaceae,Pseudomonas,Pseudomonas aeruginosa
+Pseudomonas phage MP42,JQ762257,Pseudomonas aeruginosa PA14,ASWV01,Bacteria,Proteobacteria,Gammaproteobacteria,Pseudomonadales,Pseudomonadaceae,Pseudomonas,Pseudomonas aeruginosa
+Pseudomonas phage MP48,KF475786,Pseudomonas aeruginosa PA14,ASWV01,Bacteria,Proteobacteria,Gammaproteobacteria,Pseudomonadales,Pseudomonadaceae,Pseudomonas,Pseudomonas aeruginosa
+Pseudomonas phage PAK_P3,KC862299,Pseudomonas aeruginosa PAK,AZUG01,Bacteria,Proteobacteria,Gammaproteobacteria,Pseudomonadales,Pseudomonadaceae,Pseudomonas,Pseudomonas aeruginosa
+Pseudomonas phage PAK_P1,KC862297,Pseudomonas aeruginosa PAK,AZUG01,Bacteria,Proteobacteria,Gammaproteobacteria,Pseudomonadales,Pseudomonadaceae,Pseudomonas,Pseudomonas aeruginosa
+Pseudomonas phage PAK_P5,KC862301,Pseudomonas aeruginosa PAK,AZUG01,Bacteria,Proteobacteria,Gammaproteobacteria,Pseudomonadales,Pseudomonadaceae,Pseudomonas,Pseudomonas aeruginosa
+Pseudomonas phage PAK_P4,KC862300,Pseudomonas aeruginosa PAK,AZUG01,Bacteria,Proteobacteria,Gammaproteobacteria,Pseudomonadales,Pseudomonadaceae,Pseudomonas,Pseudomonas aeruginosa
+Pseudomonas phage PAK_P2,KC862298,Pseudomonas aeruginosa PAK,AZUG01,Bacteria,Proteobacteria,Gammaproteobacteria,Pseudomonadales,Pseudomonadaceae,Pseudomonas,Pseudomonas aeruginosa
+Pseudomonas phage phi-2,FN594518,Pseudomonas fluorescens SBW25,NC_012660.1,Bacteria,Proteobacteria,Gammaproteobacteria,Pseudomonadales,Pseudomonadaceae,Pseudomonas,Pseudomonas fluorescens
+Pseudomonas phage phiPsa374,KJ409772,Pseudomonas syringae pv. actinidiae ICMP 18800,ANJD01,Bacteria,Proteobacteria,Gammaproteobacteria,Pseudomonadales,Pseudomonadaceae,Pseudomonas,Pseudomonas syringae
+Puniceispirillum phage HMO-2011,GU557055,Candidatus Puniceispirillum marinum IMCC1322,NC_014010.1,Bacteria,Proteobacteria,Alphaproteobacteria,,,Candidatus Puniceispirillum,Candidatus Puniceispirillum marinum
+Rhizobium phage vB_RleS_L338C,KF614509,Rhizobium leguminosarum bv. viciae 3841,NC_008380.1,Bacteria,Proteobacteria,Alphaproteobacteria,Rhizobiales,Rhizobiaceae,Rhizobium,Rhizobium leguminosarum
+Rhizobium phage vB_RleM_P10VF,KM199770,Rhizobium leguminosarum bv. viciae VF39,ATYQ01,Bacteria,Proteobacteria,Alphaproteobacteria,Rhizobiales,Rhizobiaceae,Rhizobium,Rhizobium leguminosarum
+Ruegeria phage DSS3-P1,KM581061,Ruegeria pomeroyi DSS-3,NC_003911.12,Bacteria,Proteobacteria,Alphaproteobacteria,Rhodobacterales,Rhodobacteraceae,Ruegeria,Ruegeria pomeroyi
+Salmonella phage iEPS5,KC677662,Salmonella enterica subsp. enterica serovar Typhimurium str. SL1344,NC_016810.1,Bacteria,Proteobacteria,Gammaproteobacteria,Enterobacteriales,Enterobacteriaceae,Salmonella,Salmonella enterica
+Salmonella phage SPC32H,KC911856,Salmonella enterica subsp. enterica serovar Typhimurium str. LT2,NC_003197.1,Bacteria,Proteobacteria,Gammaproteobacteria,Enterobacteriales,Enterobacteriaceae,Salmonella,Salmonella enterica
+Salmonella phage SPC32N,KC911857,Salmonella enterica subsp. enterica serovar Typhimurium str. LT2,NC_003197.1,Bacteria,Proteobacteria,Gammaproteobacteria,Enterobacteriales,Enterobacteriaceae,Salmonella,Salmonella enterica
+Salmonella phage 9NA,KJ802832,Salmonella enterica subsp. enterica serovar Typhimurium str. LT2,NC_003197.1,Bacteria,Proteobacteria,Gammaproteobacteria,Enterobacteriales,Enterobacteriaceae,Salmonella,Salmonella enterica
+Enterobacteria phage P22,AB426868,Salmonella enterica subsp. enterica serovar Typhimurium str. LT2,NC_003197.1,Bacteria,Proteobacteria,Gammaproteobacteria,Enterobacteriales,Enterobacteriaceae,Salmonella,Salmonella enterica
+Enterobacteria phage P22,AB362338,Salmonella enterica subsp. enterica serovar Typhimurium str. LT2,NC_003197.1,Bacteria,Proteobacteria,Gammaproteobacteria,Enterobacteriales,Enterobacteriaceae,Salmonella,Salmonella enterica
+Salmonella phage SSU5,JQ965645,Salmonella enterica subsp. enterica serovar Typhimurium str. LT2,NC_003197.1,Bacteria,Proteobacteria,Gammaproteobacteria,Enterobacteriales,Enterobacteriaceae,Salmonella,Salmonella enterica
+Salmonella phage STP4-a,KJ000058,Salmonella enterica subsp. enterica serovar Typhimurium str. 14028S,NC_016856.1,Bacteria,Proteobacteria,Gammaproteobacteria,Enterobacteriales,Enterobacteriaceae,Salmonella,Salmonella enterica
+Enterobacteria phage ST104,AB102868,Salmonella enterica subsp. enterica serovar Typhimurium str. DT104,NC_022569.1,Bacteria,Proteobacteria,Gammaproteobacteria,Enterobacteriales,Enterobacteriaceae,Salmonella,Salmonella enterica
+Sinorhizobium phage PBC5,AF448724,Sinorhizobium meliloti 2011,NC_020528.1,Bacteria,Proteobacteria,Alphaproteobacteria,Rhizobiales,Rhizobiaceae,Sinorhizobium,Sinorhizobium meliloti
+Sodalis phage phiSG1,AP009146,Sodalis glossinidius str. 'morsitans',NC_007712.1,Bacteria,Proteobacteria,Gammaproteobacteria,Enterobacteriales,Enterobacteriaceae,Sodalis,Sodalis glossinidius
+Staphylococcus phage 11,AF424781,Staphylococcus aureus subsp. aureus NCTC 8325,NC_007795.1,Bacteria,Firmicutes,Bacilli,Bacillales,Staphylococcaceae,Staphylococcus,Staphylococcus aureus
+Staphylococcus phage phi 12,AF424782,Staphylococcus aureus subsp. aureus NCTC 8325,NC_007795.1,Bacteria,Firmicutes,Bacilli,Bacillales,Staphylococcaceae,Staphylococcus,Staphylococcus aureus
+Staphylococcus phage phi13,AF424783,Staphylococcus aureus subsp. aureus NCTC 8325,NC_007795.1,Bacteria,Firmicutes,Bacilli,Bacillales,Staphylococcaceae,Staphylococcus,Staphylococcus aureus
+Streptococcus phage SP-QS1,HE962497,Streptococcus pneumoniae D39,CP000410.1,Bacteria,Firmicutes,Bacilli,Lactobacillales,Streptococcaceae,Streptococcus,Streptococcus pneumoniae
+Streptococcus phage Dp-1,HQ268735,Streptococcus pneumoniae R6,NC_003098.1,Bacteria,Firmicutes,Bacilli,Lactobacillales,Streptococcaceae,Streptococcus,Streptococcus pneumoniae
+Streptococcus phage YMC-2011,CP002889,Streptococcus salivarius 57.I,CP002888.1,Bacteria,Firmicutes,Bacilli,Lactobacillales,Streptococcaceae,Streptococcus,Streptococcus salivarius
+Streptomyces phage R4,JX182370,Streptomyces coelicolor A3(2),NC_003888.3,Bacteria,Actinobacteria,Actinobacteria,Streptomycetales,Streptomycetaceae,Streptomyces,Streptomyces coelicolor
+Streptomyces phage phiHau3,JX182369,Streptomyces coelicolor A3(2),NC_003888.3,Bacteria,Actinobacteria,Actinobacteria,Streptomycetales,Streptomycetaceae,Streptomyces,Streptomyces coelicolor
+Sulfitobacter phage pCB2047-C,HQ317384,Sulfitobacter sp. CB2047,JPOY01,Bacteria,Proteobacteria,Alphaproteobacteria,Rhodobacterales,Rhodobacteraceae,Sulfitobacter,
+Sulfitobacter phage pCB2047-A,HQ332142,Sulfitobacter sp. CB2047,JPOY01,Bacteria,Proteobacteria,Alphaproteobacteria,Rhodobacterales,Rhodobacteraceae,Sulfitobacter,
+Sulfitobacter phage pCB2047-B,HQ317387,Sulfitobacter sp. CB2047,JPOY01,Bacteria,Proteobacteria,Alphaproteobacteria,Rhodobacterales,Rhodobacteraceae,Sulfitobacter,
+Sulfolobus islandicus rudivirus 1 variant XX,AJ748296,Sulfolobus islandicus LAL14/1,NC_021058.1,Archaea,Crenarchaeota,Thermoprotei,Sulfolobales,Sulfolobaceae,Sulfolobus,Sulfolobus islandicus
+Sulfolobus monocaudavirus SMV1,HG322870,Sulfolobus solfataricus P2,NC_002754.1,Archaea,Crenarchaeota,Thermoprotei,Sulfolobales,Sulfolobaceae,Sulfolobus,Sulfolobus solfataricus
+Synechococcus phage S-CBP3,KC310803,Synechococcus sp. CB0101,ADXL01,Bacteria,Cyanobacteria,,Chroococcales,,Synechococcus,
+Synechococcus phage S-CBP4,KC310804,Synechococcus sp. CB0101,ADXL01,Bacteria,Cyanobacteria,,Chroococcales,,Synechococcus,
+Synechococcus phage S-CBP1,KC310802,Synechococcus sp. CB0101,ADXL01,Bacteria,Cyanobacteria,,Chroococcales,,Synechococcus,
+Synechococcus phage S-CBS4,HQ698895,Synechococcus sp. CB0101,ADXL01,Bacteria,Cyanobacteria,,Chroococcales,,Synechococcus,
+Synechococcus phage Syn5,EF372997,Synechococcus sp. WH 8109,NZ_CP006882.1,Bacteria,Cyanobacteria,,Chroococcales,,Synechococcus,
+Prochlorococcus phage Syn33,GU071108,Synechococcus sp. WH 7803,NC_009481.1,Bacteria,Cyanobacteria,,Chroococcales,,Synechococcus,
+Cyanophage Syn30,HQ634189,Synechococcus sp. WH 7803,NC_009481.1,Bacteria,Cyanobacteria,,Chroococcales,,Synechococcus,
+Cyanophage KBS-P-1A,HQ634188,Synechococcus sp. WH 7803,NC_009481.1,Bacteria,Cyanobacteria,,Chroococcales,,Synechococcus,
+Cyanophage KBS-S-2A,HQ634187,Synechococcus sp. WH 7803,NC_009481.1,Bacteria,Cyanobacteria,,Chroococcales,,Synechococcus,
+Synechococcus phage S-RIM2 R9_2006,HQ317291,Synechococcus sp. WH 7803,NC_009481.1,Bacteria,Cyanobacteria,,Chroococcales,,Synechococcus,
+Synechococcus phage S-RIM2 R21_2007,HQ317290,Synechococcus sp. WH 7803,NC_009481.1,Bacteria,Cyanobacteria,,Chroococcales,,Synechococcus,
+Synechococcus phage S-RIM8 A.HR5,HQ317385,Synechococcus sp. WH 7803,NC_009481.1,Bacteria,Cyanobacteria,,Chroococcales,,Synechococcus,
+Synechococcus phage S-RIM8 A.HR3,JF974289,Synechococcus sp. WH 7803,NC_009481.1,Bacteria,Cyanobacteria,,Chroococcales,,Synechococcus,
+Synechococcus phage S-MbCM25,KF156339,Synechococcus sp. WH 7803,NC_009481.1,Bacteria,Cyanobacteria,,Chroococcales,,Synechococcus,
+Synechococcus phage S-RIM2 R1_1999,HQ317292,Synechococcus sp. WH 7803,NC_009481.1,Bacteria,Cyanobacteria,,Chroococcales,,Synechococcus,
+Synechococcus phage S-CAM1,HQ634177,Synechococcus sp. WH 7803,NC_009481.1,Bacteria,Cyanobacteria,,Chroococcales,,Synechococcus,
+Synechococcus phage S-CAM8,HQ634178,Synechococcus sp. WH 7803,NC_009481.1,Bacteria,Cyanobacteria,,Chroococcales,,Synechococcus,
+Synechococcus phage S-IOM18,HQ317383,Synechococcus sp. WH 7803,NC_009481.1,Bacteria,Cyanobacteria,,Chroococcales,,Synechococcus,
+Synechococcus phage S-RIM8 A.HR1,JF974288,Synechococcus sp. WH 7803,NC_009481.1,Bacteria,Cyanobacteria,,Chroococcales,,Synechococcus,
+Cyanophage KBS-M-1A,JF974293,Synechococcus sp. WH 7803,NC_009481.1,Bacteria,Cyanobacteria,,Chroococcales,,Synechococcus,
+Synechococcus phage S-MbCM7,KF156338,Synechococcus sp. WH 7803,NC_009481.1,Bacteria,Cyanobacteria,,Chroococcales,,Synechococcus,
+Synechococcus phage S-MbCM100,KF156340,Synechococcus sp. WH 7803,NC_009481.1,Bacteria,Cyanobacteria,,Chroococcales,,Synechococcus,
+Synechococcus phage S-RIP2,HQ317389,Synechococcus sp. WH 7803,NC_009481.1,Bacteria,Cyanobacteria,,Chroococcales,,Synechococcus,
+Synechococcus phage S-SKS1,HQ633071,Synechococcus sp. WH 7803,NC_009481.1,Bacteria,Cyanobacteria,,Chroococcales,,Synechococcus,
+Synechococcus phage S-PM2,AJ630128,Synechococcus sp. WH 7803,NC_009481.1,Bacteria,Cyanobacteria,,Chroococcales,,Synechococcus,
+Synechococcus phage P60,AF338467,Synechococcus sp. WH 7805,AAOK01,Bacteria,Cyanobacteria,,Chroococcales,,Synechococcus,
+Cyanophage S-SSM2,JF974292,Synechococcus sp. WH 8102,NC_005070.1,Bacteria,Cyanobacteria,,Chroococcales,,Synechococcus,
+Synechococcus phage S-ShM2,GU071096,Synechococcus sp. WH 8102,NC_005070.1,Bacteria,Cyanobacteria,,Chroococcales,,Synechococcus,
+Synechococcus phage S-SSM5,GU071097,Synechococcus sp. WH 8102,NC_005070.1,Bacteria,Cyanobacteria,,Chroococcales,,Synechococcus,
+Cyanophage S-TIM5,JQ245707,Synechococcus sp. WH 8102,NC_005070.1,Bacteria,Cyanobacteria,,Chroococcales,,Synechococcus,
+Synechococcus phage Syn19,GU071106,Synechococcus sp. WH 8109,NZ_CP006882.1,Bacteria,Cyanobacteria,,Chroococcales,,Synechococcus,
+Synechococcus phage S-SSM7,GU071098,Synechococcus sp. WH 8109,NZ_CP006882.1,Bacteria,Cyanobacteria,,Chroococcales,,Synechococcus,
+Cyanophage S-SSM6b,HQ316603,Synechococcus sp. WH 8109,NZ_CP006882.1,Bacteria,Cyanobacteria,,Chroococcales,,Synechococcus,
+Cyanophage S-SSM6a,HQ317391,Synechococcus sp. WH 8109,NZ_CP006882.1,Bacteria,Cyanobacteria,,Chroococcales,,Synechococcus,
+Thermoanaerobacterium phage THSA-485A,CP003186,Thermoanaerobacterium saccharolyticum JW/SL-YS485,CP003184.1,Bacteria,Firmicutes,Clostridia,Thermoanaerobacterales,Thermoanaerobacterales Family III. Incertae Sedis,Thermoanaerobacterium,Thermoanaerobacterium saccharolyticum
+Thermus phage TMA,AP011617,Thermus thermophilus HB27,NC_005835.1,Bacteria,Deinococcus-Thermus,Deinococci,Thermales,Thermaceae,Thermus,Thermus thermophilus
+Thermus phage phiYS40,AP011616,Thermus thermophilus HB8,NC_006461.1,Bacteria,Deinococcus-Thermus,Deinococci,Thermales,Thermaceae,Thermus,Thermus thermophilus
+Vibrio phage SIO-2,HQ316604,Vibrionales bacterium SWAT-3,AAZW01,Bacteria,Proteobacteria,Gammaproteobacteria,Vibrionales,,,
+Yersinia phage Yepe2,EU734170,Yersinia pestis A1122,NZ_CP009840.1,Bacteria,Proteobacteria,Gammaproteobacteria,Enterobacteriales,Enterobacteriaceae,Yersinia,Yersinia pestis

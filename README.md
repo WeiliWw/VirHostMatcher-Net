@@ -77,7 +77,7 @@ VirHostMatcher-Net accepts files in FASTA format.
                           score. Default = 1
       -i INTERMEDIATE_DIR  Directory storing intermediate result. Default =
                           ./intermediate_res                   
-      -l GENOME_LIST       Location of the file containing NCBI genome names of
+      -l GENOME_LIST       Location of the file containing host NCBI genome names of
                            interest
 
 ### Examples
@@ -85,18 +85,23 @@ VirHostMatcher-Net accepts files in FASTA format.
 #### Predict hosts of virus genomes
 ```
 mkdir output
-python VirHostMatcher-Net.py -q ./test/test_query -o output -i tmp -n 5 -t 8
+python VirHostMatcher-Net.py -q ./test/VGs -o output -i tmp -n 3 -t 8
 ```
 
 #### Predict hosts of viral contigs
+(Including 418 contigs, host prediction for this test set may take about one hour.)
 ```
 mkdir output2
-python VirHostMatcher-Net.py -q ./test/test_query2 --short-contig -o output2 -n 5 -t 8
+python VirHostMatcher-Net.py -q ./test/mVCs --short-contig -o output2 -n 3 -t 8 -l genome_list/hmp359.txt
 ```
+
+
 
 In both modes, VirHostMatcher-Net outputs a prediction file for each query virus to the specified directory. A prediction file is in .csv format where each row represents one candidate host with detailed taxanomic information, a prediction score, values (*_val) and percentiles (*_pct) of each feature. The feature percentile of a virus-host pair is defined as the percentile of this feature score among all scores between that virus and all the candidate hosts. A very high percentile (i.e. >95%) suggests significance of the feature on contributing to the prediction. In the output, the percentile of SV<sub>-</sub>, with a negative coefficient, is reversed to keep consistent with other feature percentiles. Tables of feature values are stored in a subdirectory `feature_values` under the output directory.
 
-A user can use a subset of candidate hosts for prediction by the option `-l` to specify the NCBI genome names. Two example lists of 3529 marine hosts and 359 HMP hosts can be found in the directory `genome_list`. 
+Users can use a subset of candidate hosts for prediction by the option `-l` to specify the NCBI genome names. Two example lists of 3529 marine hosts and 359 HMP hosts can be found in the directory `genome_list`. The current entire host database can be found in the table `data_info/hostData.csv`.
+
+Other related information about the training data and benchmark test data can also be found in the directory `data_info`. 
 
 ### Bug reports
 Please open a Github issue or contact Weili Wang weiliw@usc.edu
