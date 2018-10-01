@@ -63,7 +63,7 @@ VirHostMatcher-Net accepts files in FASTA format.
 
 ## Usage 
     python VirHostMatcher-Net.py [-h] -q QUERY_VIRUS_DIR [-t NUM_THREADS] [--short-contig] -o
-                 OUTPUT_DIR [-n topN] [-i INTERMEDIATE_DIR]
+                 OUTPUT_DIR [-n topN] [-i INTERMEDIATE_DIR] [-l GENOME_LIST]
 #### Options
       -h, --help          show this help message and exit
       -q QUERY_VIRUS_DIR  Directory containing query virus genomes with .fasta or
