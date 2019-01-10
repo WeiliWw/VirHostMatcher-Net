@@ -97,10 +97,10 @@ class HostPredictor:
                 pred['WIsH_val'] = self.wish.loc[query]
             else:
                 pred['s2star_val'] = self.s2star.loc[query]
-                pred['posSV_val'] = self.posSV.loc[query]
-                pred['negSV_val'] = self.negSV.loc[query]
-                pred['crispr_val'] = self.crispr.loc[query]
-                pred['blast_val'] = self.blast.loc[query]
+            pred['posSV_val'] = self.posSV.loc[query]
+            pred['negSV_val'] = self.negSV.loc[query]
+            pred['crispr_val'] = self.crispr.loc[query]
+            pred['blast_val'] = self.blast.loc[query]
             if self._short:
                 pred['WIsH_pct'] = self.wish.loc[query].rank(pct=True, method='min').loc[topIdx]
             else:
