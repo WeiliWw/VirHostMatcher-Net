@@ -90,7 +90,7 @@ Parameters:
 def s2_query(query_virus_dir, ifShort, numThreads):
     print('----Start calculating s2* part I... ----')
     virus_mat, virus_list = get_all_f(query_virus_dir, 6, 2, True, numThreads)
-    s2_intra_mat = cosine_similarity(virus_mat, virus_mat)
+    # s2_intra_mat = cosine_similarity(virus_mat, virus_mat)
     print('----Finished calculating s2* part I----')
     print('----Start calculating s2* part II... ----')
     ## read bench file
@@ -99,7 +99,7 @@ def s2_query(query_virus_dir, ifShort, numThreads):
     s2_virus_bench_mat = cosine_similarity(virus_mat, bench_mat)
     print('----Finished calculating s2* part II----')
     if ifShort:
-        return pd.DataFrame(s2_intra_mat, columns=virus_list, index=virus_list), pd.DataFrame(s2_virus_bench_mat, index=virus_list, columns=bench_list), None
+        return pd.DataFrame(s2_virus_bench_mat, index=virus_list, columns=bench_list), None
     else:
         ## read host mat file
         print('----Start calculating s2* part III... ----')
@@ -107,7 +107,7 @@ def s2_query(query_virus_dir, ifShort, numThreads):
         s2_host_virus_mat = cosine_similarity(virus_mat, host_mat)
         print('----Finished calculating s2* part III----')
         ## return three matrices
-        return pd.DataFrame(s2_intra_mat, columns=virus_list, index=virus_list), pd.DataFrame(s2_virus_bench_mat, index=virus_list, columns=bench_list), pd.DataFrame(s2_host_virus_mat, index=virus_list, columns=host_mat.index)
+        return pd.DataFrame(s2_virus_bench_mat, index=virus_list, columns=bench_list), pd.DataFrame(s2_host_virus_mat, index=virus_list, columns=host_mat.index)
 
 
 
@@ -205,19 +205,19 @@ def s2star_caclculator(query_virus_dir, ifShort, numThreads):
         print('----Calculation of s2* is split into two parts----')
     else:
         print('----Calculation of s2* is split into three parts----')
-    mat_intra_query, mat_query_bench, s2star_query_host = s2_query(query_virus_dir, ifShort, numThreads)
+    mat_query_bench, s2star_query_host = s2_query(query_virus_dir, ifShort, numThreads)
     host_index = mat_original_interaction.columns
-    query_index = mat_intra_query.index
+    query_index = mat_query_bench.index
     virus_index = query_index.tolist() + mat_original_interaction.index.tolist()
-    s2star_query_virus = pd.concat([mat_query_bench,
-                                    mat_intra_query], sort=False).groupby(level=0, sort=False).sum().loc[query_index, virus_index]
+    #s2star_query_virus = pd.concat([mat_query_bench,
+    #                                mat_intra_query], sort=False).groupby(level=0, sort=False).sum().loc[query_index, virus_index]
     if not ifShort:
         s2star_query_host = s2star_query_host.loc[query_index, host_index]
-    s2star_query_virus = s2star_query_virus.loc[query_index, virus_index]
-    pseudo_interaction = pd.DataFrame(index=virus_index, columns=host_index).fillna(0)
-    df_interaction = pd.concat([mat_original_interaction,pseudo_interaction]).groupby(level=0).sum().fillna(0)
-    df_interaction = df_interaction.loc[virus_index][host_index]
-    s2star_query_virus.values[[np.arange(s2star_query_virus.shape[0])]*2] = 0
-    return s2star_query_host, s2star_query_virus, df_interaction
+    #s2star_query_virus = s2star_query_virus.loc[query_index, virus_index]
+    #pseudo_interaction = pd.DataFrame(index=virus_index, columns=host_index).fillna(0)
+    #df_interaction = pd.concat([mat_original_interaction,pseudo_interaction]).groupby(level=0).sum().fillna(0)
+    #df_interaction = df_interaction.loc[virus_index][host_index]
+    #s2star_query_virus.values[[np.arange(s2star_query_virus.shape[0])]*2] = 0
+    return s2star_query_host, mat_query_bench, mat_original_interaction 
 
 
