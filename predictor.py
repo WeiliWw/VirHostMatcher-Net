@@ -6,7 +6,7 @@ import src.crispr
 import src.neighborhood
 import src.wish
 import src.blast
-from src.Variables import REGRESSION_COEFFICIENTS, REGRESSION_COEFFICIENTS_SHORT, TAXA_INFO
+from src.Variables import REGRESSION_COEFFICIENTS, REGRESSION_COEFFICIENTS_SHORT, TAXA_INFO, PRED_THRE
 import pandas as pd
 import numpy as np
 import os
@@ -77,6 +77,7 @@ class HostPredictor:
         # read in taxa info:
         taxa_info = pd.read_pickle(TAXA_INFO)
         taxa_info = taxa_info.set_index('hostNCBIName')
+        pred_thre = pd.read_csv(PRED_THRE)
         '''
         If the highest scores have a tie more than topN, output them all
         '''
@@ -122,6 +123,17 @@ class HostPredictor:
             else:
                 pred['blast_pct'] = self.blast.loc[query].rank(pct=True, method='min').loc[topIdx]
             #dict_pred[query] = pred
+            if pred['score'][0] >= 0.7 and pred['hostSuperkingdom'][0] == 'Bacteria':
+                ind = (pred['score'][0] - 0.7)//0.005
+                pred['acc_phylum'] = [pred_thre['hostPhylum'][ind]] + [None for i in range(len(pred)-1)]
+                if pred['hostClass'][0]:
+                    pred['acc_class'] = [pred_thre['hostClass'][ind]] + [None for i in range(len(pred)-1)]
+                if pred['hostOrder'][0]:
+                    pred['acc_order'] = [pred_thre['hostOrder'][ind]] + [None for i in range(len(pred)-1)]
+                if pred['hostFamily'][0]:
+                    pred['acc_family'] = [pred_thre['hostFamily'][ind]] + [None for i in range(len(pred)-1)]
+                if pred['hostGenus'][0]:
+                    pred['acc_genus'] = [pred_thre['hostGenus'][ind]] + [None for i in range(len(pred)-1)]
             pred.to_csv(os.path.join(output_dir_pred, (query+'_prediction.csv')), float_format='%.4f')
         #return dict_pred
             

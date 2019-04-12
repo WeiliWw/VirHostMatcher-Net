@@ -15,6 +15,7 @@ DB_HOST_CRISPR_PREFIX = os.path.join(_path, 'data/crispr_db_prefix/allCRISPRs_16
 HASH_TABLE = os.path.join(_path, 'data/tables/genome2header.pkl')
 WISH_HOST_MODELS =  os.path.join(_path, 'data/host31986_model/')
 TAXA_INFO = os.path.join(_path, 'data/tables/hostTaxa.pkl')
+PRED_THRE = os.path.join(_path, 'data/tables/predThre.csv')
 # TABLES: intermediate s2 values and the interaction 0-1 matrix
 TABLES = os.path.join(_path, 'data/tables/tables.h5')
 
