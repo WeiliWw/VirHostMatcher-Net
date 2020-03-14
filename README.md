@@ -1,6 +1,6 @@
 # README
 
-VirHostMatcher-Net is a network-based computational tool for predicting virus-host interactions. Current version predicts hosts of given viruses from a database of 31,986 bacteria candidates. VirHostMatcher-Net has two modes: predicting for complete genomes and predicting for short viral contigs.
+VirHostMatcher-Net is a network-based computational tool for predicting virus-host interactions. Current version predicts hosts of given viruses from a database of 62,493 Bacteria and Archaea candidates. VirHostMatcher-Net has two modes: predicting for complete genomes and predicting for short viral contigs.
 
 ### Dependencies
 
@@ -14,7 +14,7 @@ VirHostMatcher-Net requires Python 3.4+ together with the following packages and
 
 We recommend to use [Miniconda](https://conda.io/miniconda.html) to install all dependencies. After installing Miniconda, simply run
 ```
-conda install numpy pandas Biopython pytables
+conda install numpy pandas Biopython 
 conda install -c bioconda blast
 ``` 
 
@@ -89,19 +89,16 @@ python VirHostMatcher-Net.py -q ./test/VGs -o output -i tmp -n 3 -t 8
 ```
 
 #### Predict hosts of viral contigs
-(Including 418 contigs, host prediction for this test set may take about one hour.)
 ```
 mkdir output2
-python VirHostMatcher-Net.py -q ./test/mVCs --short-contig -o output2 -n 3 -t 8 -l genome_list/hmp359.txt
+python VirHostMatcher-Net.py -q ./test/mVCs --short-contig -o output2 -n 3 -t 8 -l genome_list/marine_host_list.txt
 ```
 
 
 
 In both modes, VirHostMatcher-Net outputs a prediction file for each query virus to the specified directory. A prediction file is in .csv format where each row represents one candidate host with detailed taxanomic information, a prediction score, values (*_val) and percentiles (*_pct) of each feature. The feature percentile of a virus-host pair is defined as the percentile of this feature score among all scores between that virus and all the candidate hosts. A very high percentile (i.e. >95%) suggests significance of the feature on contributing to the prediction. In the output, the percentile of SV<sub>-</sub>, with a negative coefficient, is reversed to keep consistent with other feature percentiles. Tables of feature values are stored in a subdirectory `feature_values` under the output directory.
 
-Users can use a subset of candidate hosts for prediction by the option `-l` to specify the NCBI genome names. Two example lists of 3529 marine hosts and 359 HMP hosts can be found in the directory `genome_list`. The current entire host database can be found in the table `data_info/hostData.csv`.
-
-Other related information about the training data and benchmark test data can also be found in the directory `data_info`. 
+Users can use a subset of candidate hosts for prediction by the option `-l` to specify a list of NCBI genome names. Two example lists of 4034 marine hosts and 9097 human-associated hosts can be found in the directory `genome_list`.  
 
 ### Bug reports
 Please open a Github issue or contact Weili Wang weiliw@usc.edu

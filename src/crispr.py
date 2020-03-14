@@ -22,7 +22,7 @@ db_host_crispr_prefix = os.path.expanduser(db_host_crispr_prefix)
 
 #dict_genome = hash_table.set_index(1).to_dict()[0]
 taxa_info = pd.read_pickle(taxa_info_file)
-taxa_info = taxa_info.set_index('hostNCBIName')
+# taxa_info = taxa_info.set_index('hostNCBIName')
 
 '''
 Function: Run blast for a single query virus and return CRISPR signal

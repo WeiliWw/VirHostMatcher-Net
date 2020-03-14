@@ -1,19 +1,19 @@
 '''
 Generates necessary results of s2star 
 '''
-import os, sys
+import os, sys, pickle
 import pandas as pd
 #from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 #from . import tools
 from .tools import kmer_count
-from .Variables import TABLES
+from .Variables import TABLE_HOST, TABLE_BENCH, TABLE_INTER
 '''
 Preset variables
 ### to be checked!
 '''
 # output_dir = INTERMEDIATE_RESULT #'./intermediate_res/'
-tables = TABLES
+# tables = TABLES
 # original_interaction_file = S2STAR_BENCH_HOST 
 # hash_dir = D2STAR_HASH #'/home/rcf-40/weiliw/panasas/v-h-
 # pseudo_host = PSEUDO_HOST #'./prepare_data/pseudo_host/'
@@ -94,8 +94,7 @@ def s2_query(query_virus_dir, ifShort, numThreads):
     print('----Finished calculating s2* part I----')
     print('----Start calculating s2* part II... ----')
     ## read bench file
-    bench_mat = pd.read_hdf(tables, 'bench')
-    bench_list = bench_mat.index
+    bench_mat, bench_list = pickle.load(open(TABLE_BENCH, 'rb'))
     s2_virus_bench_mat = cosine_similarity(virus_mat, bench_mat)
     print('----Finished calculating s2* part II----')
     if ifShort:
@@ -103,11 +102,11 @@ def s2_query(query_virus_dir, ifShort, numThreads):
     else:
         ## read host mat file
         print('----Start calculating s2* part III... ----')
-        host_mat = pd.read_hdf(tables, 'host')
+        host_mat, host_list = pickle.load(open(TABLE_HOST, 'rb'))
         s2_host_virus_mat = cosine_similarity(virus_mat, host_mat)
         print('----Finished calculating s2* part III----')
         ## return three matrices
-        return pd.DataFrame(s2_virus_bench_mat, index=virus_list, columns=bench_list), pd.DataFrame(s2_host_virus_mat, index=virus_list, columns=host_mat.index)
+        return pd.DataFrame(s2_virus_bench_mat, index=virus_list, columns=bench_list), pd.DataFrame(s2_host_virus_mat, index=virus_list, columns=host_list)
 
 
 
@@ -200,7 +199,7 @@ Parameters:
 #    return s2star_query_host, s2star_query_virus, df_interaction
 #
 def s2star_caclculator(query_virus_dir, ifShort, numThreads):
-    mat_original_interaction = pd.read_hdf(tables,'interaction') # 352 by 31k
+    mat_original_interaction = pd.read_csv(TABLE_INTER) # 352 by 31k
     if ifShort:
         print('----Calculation of s2* is split into two parts----')
     else:

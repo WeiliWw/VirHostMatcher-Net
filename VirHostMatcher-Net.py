@@ -42,7 +42,6 @@ print('Loading packages...')
 
 import pandas as pd    
 from predictor import HostPredictor     
-from Bio.Blast.Applications import NcbiblastnCommandline
 
 predictor = HostPredictor(query_virus_dir, args.short_contig, intermediate_dir, genome_list, args.num_Threads[0])
 
@@ -68,7 +67,7 @@ print('Writing feature scores to {}...'.format(output_dir_features))
 predictor.crispr.to_csv(os.path.join(output_dir_features,'feature_values_crispr.csv'), float_format='%.4f')
 predictor.posSV.to_csv(os.path.join(output_dir_features,'feature_values_posSV.csv'), float_format='%.4f')
 predictor.negSV.to_csv(os.path.join(output_dir_features,'feature_values_negSV.csv'), float_format='%.4f')
-predictor.blast.to_csv(os.path.join(output_dir_features,'feature_values_blast.csv'), float_format='%.5f')
+# predictor.blast.to_csv(os.path.join(output_dir_features,'feature_values_blast.csv'), float_format='%.5f')
 
 predictor.getScores()
 predictor.prediction(args.topN[0], output_dir_pred)

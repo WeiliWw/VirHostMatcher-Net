@@ -16,10 +16,10 @@ db_host_prefix = DB_HOST_PREFIX
 hash_table_file = HASH_TABLE 
 
 db_host_prefix = os.path.expanduser(db_host_prefix)
-hash_table = pd.read_pickle(hash_table_file)
-hash_table[1] = hash_table[1].apply(lambda x: x.split('.')[0])
-dict_genome = hash_table.set_index(1).to_dict()[0]
-
+# hash_table = pd.read_pickle(hash_table_file)
+# hash_table[1] = hash_table[1].apply(lambda x: x.split('.')[0])
+# dict_genome = hash_table.set_index(1).to_dict()[0]
+dict_genome = pickle.load(open(hash_table_file, 'rb'))
 
 '''
 Auxiliary function

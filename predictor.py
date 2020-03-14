@@ -5,7 +5,7 @@ import src.s2star
 import src.crispr
 import src.neighborhood
 import src.wish
-import src.blast
+# import src.blast
 from src.Variables import REGRESSION_COEFFICIENTS, REGRESSION_COEFFICIENTS_SHORT, TAXA_INFO, PRED_THRE
 import pandas as pd
 import numpy as np
@@ -43,7 +43,7 @@ class HostPredictor:
             self.wish = src.wish.wish_llkd_calculator(query_virus_dir, self._virus_index, self._host_index, intermediate_dir, numThreads)
         else:
             self.wish = None
-        self.blast = src.blast.blast_calculator(query_virus_dir, self._virus_index, self._host_index, genomes, intermediate_dir, numThreads)
+#        self.blast = src.blast.blast_calculator(query_virus_dir, self._virus_index, self._host_index, genomes, intermediate_dir, numThreads)
         self._crispr_signals = src.crispr.crispr_calculator(query_virus_dir, intermediate_dir, numThreads)
         self.crispr = src.crispr.uniGenus(self._crispr_signals, self._virus_index, self._host_index)
         # wish , if statement?
@@ -61,22 +61,22 @@ class HostPredictor:
             REGRESSION_COEFFICIENTS_SHORT[1]*self.wish +  \
             REGRESSION_COEFFICIENTS_SHORT[2]*self.posSV +  \
             REGRESSION_COEFFICIENTS_SHORT[3]*self.negSV +  \
-            REGRESSION_COEFFICIENTS_SHORT[4]*self.crispr +  \
-            REGRESSION_COEFFICIENTS_SHORT[5]*self.blast
+            REGRESSION_COEFFICIENTS_SHORT[4]*self.crispr   
+#            REGRESSION_COEFFICIENTS_SHORT[5]*self.blast
         else:
             score = REGRESSION_COEFFICIENTS[0]*pd.DataFrame(index=self._virus_index, columns=self._host_index).fillna(1) +  \
             REGRESSION_COEFFICIENTS[1]*self.s2star +  \
             REGRESSION_COEFFICIENTS[2]*self.posSV +  \
             REGRESSION_COEFFICIENTS[3]*self.negSV +  \
-            REGRESSION_COEFFICIENTS[4]*self.crispr +  \
-            REGRESSION_COEFFICIENTS[5]*self.blast
+            REGRESSION_COEFFICIENTS[4]*self.crispr 
+#            REGRESSION_COEFFICIENTS[5]*self.blast
         self.score = 1- 1/(pd.DataFrame(score, dtype=np.float).apply(np.exp)+1)
         
     def prediction(self, topN, output_dir_pred):  
         # dict_pred = {}
         # read in taxa info:
         taxa_info = pd.read_pickle(TAXA_INFO)
-        taxa_info = taxa_info.set_index('hostNCBIName')
+#         taxa_info = taxa_info.set_index('hostNCBIName')
         pred_thre = pd.read_csv(PRED_THRE)
         '''
         If the highest scores have a tie more than topN, output them all
@@ -101,7 +101,7 @@ class HostPredictor:
             pred['posSV_val'] = self.posSV.loc[query]
             pred['negSV_val'] = self.negSV.loc[query]
             pred['crispr_val'] = self.crispr.loc[query]
-            pred['blast_val'] = self.blast.loc[query]
+#            pred['blast_val'] = self.blast.loc[query]
             if self._short:
                 pred['WIsH_pct'] = self.wish.loc[query].rank(pct=True, method='min').loc[topIdx]
             else:
@@ -118,10 +118,10 @@ class HostPredictor:
                 pred['crispr_pct'] = ['NA'] * topNum
             else: 
                 pred['crispr_pct'] = self.crispr.loc[query].rank(pct=True, method='min').loc[topIdx]
-            if self.blast.loc[query].max() == 0:
-                pred['blast_pct'] = ['NA'] * topNum
-            else:
-                pred['blast_pct'] = self.blast.loc[query].rank(pct=True, method='min').loc[topIdx]
+#            if self.blast.loc[query].max() == 0:
+#                pred['blast_pct'] = ['NA'] * topNum
+#            else:
+#                pred['blast_pct'] = self.blast.loc[query].rank(pct=True, method='min').loc[topIdx]
             #dict_pred[query] = pred
             if pred['score'][0] >= 0.7 and pred['hostSuperkingdom'][0] == 'Bacteria':
                 ind = (pred['score'][0] - 0.7)//0.005
