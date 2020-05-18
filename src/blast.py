@@ -75,13 +75,13 @@ def blastSingle(item, query_virus_dir, output_dir, seqid, numThreads):
     output_file = os.path.join(output_dir, query_name) + '.blast'
     if seqid is not None:       # specify seqidlist
         blast_call = NcbiblastnCommandline(query=query_file,db=db_host_prefix,
-                                           out=output_file,outfmt="'6 qacc sacc qstart qend qlen'",
+                                           out=output_file,outfmt="6 qacc sacc qstart qend qlen",
                                            evalue=0.01,gapopen=10,penalty=-1,reward=1,gapextend=2,
                                            word_size=11,perc_identity=90,seqidlist=seqid,
                                            num_threads=numThreads)    
     else:
         blast_call = NcbiblastnCommandline(query=query_file,db=db_host_prefix, 
-                                           out=output_file,outfmt="'6 qacc sacc qstart qend qlen'", 
+                                           out=output_file,outfmt="6 qacc sacc qstart qend qlen", 
                                            evalue=0.01,gapopen=10,penalty=-1,reward=1,gapextend=2,
                                            word_size=11,perc_identity=90,num_threads=numThreads)
     blast_call()

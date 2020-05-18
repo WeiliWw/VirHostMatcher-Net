@@ -37,7 +37,7 @@ def crisprSingle(item, query_virus_dir, output_dir, numThreads):
     query_name = item.split('.')[0]
     query_file = os.path.join(query_virus_dir, item)
     output_file = os.path.join(output_dir, query_name) + '.crispr'
-    crispr_call = NcbiblastnCommandline(query=query_file,db=db_host_crispr_prefix,out=output_file,outfmt="'6 qacc sacc evalue'", evalue=1,gapopen=10,penalty=-1,
+    crispr_call = NcbiblastnCommandline(query=query_file,db=db_host_crispr_prefix,out=output_file,outfmt="6 qacc sacc evalue", evalue=1,gapopen=10,penalty=-1,
                                   gapextend=2,word_size=7,dust='no',
                                  task='blastn-short',perc_identity=90,num_threads=numThreads)
     crispr_call()

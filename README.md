@@ -15,7 +15,6 @@ VirHostMatcher-Net requires Python 3.4+ together with the following packages and
 We recommend to use [Miniconda](https://conda.io/miniconda.html) to install all dependencies. After installing Miniconda, simply run
 ```
 conda install numpy pandas Biopython 
-conda install -c bioconda blast
 ``` 
 
 Alternatively, users may want to install Python3.X and dependencies manually. In this case, please make sure Python3.X is the default Python version and the command `blastn` from `BLAST` is added to a directory in `$PATH`. To check directories in `$PATH`, run `echo $PATH`.
