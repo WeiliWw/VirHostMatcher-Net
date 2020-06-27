@@ -101,6 +101,9 @@ Users can use a subset of candidate hosts for prediction by the option `-l` to s
 ### Bug reports
 Please open a Github issue or contact Weili Wang weiliw@usc.edu
 
+## Citation
+Wang *et al.* "A network-based integrated framework for predicting virus–prokaryote interactions" NAR Genomics and Bioinformatics, Volume 2, Issue 2, June 2020, lqaa044, https://doi.org/10.1093/nargab/lqaa044
+
 -----------------------------------------------------------------------------------------------
 ## Copyright and License Information
 Copyright (C) 2019 University of Southern California, Weili Wang and Fengzhu Sun
