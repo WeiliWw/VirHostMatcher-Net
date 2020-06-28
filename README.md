@@ -2,6 +2,10 @@
 
 VirHostMatcher-Net is a network-based computational tool for predicting virus-host interactions. Current version predicts hosts of given viruses from a database of 62,493 Bacteria and Archaea candidates. VirHostMatcher-Net has two modes: predicting for complete genomes and predicting for short viral contigs.
 
+## Citation
+Wang *et al.* "A network-based integrated framework for predicting virus–prokaryote interactions" NAR Genomics and Bioinformatics, Volume 2, Issue 2, June 2020, lqaa044, https://doi.org/10.1093/nargab/lqaa044.
+
+
 ### Dependencies
 
 VirHostMatcher-Net requires Python 3.4+ together with the following packages and `BLAST`.
@@ -19,7 +23,7 @@ conda install numpy pandas Biopython
 Alternatively, users may want to install Python3.X and dependencies manually. 
 
 ## Installation
-In addition to dependencies, VirHostMatcher-Net requires to build local modules and download data needed.
+In addition to dependencies, VirHostMatcher-Net requires to build local modules and download database.
 
 ### Building local dependent modules
 ##### Linux: 
@@ -100,9 +104,6 @@ Users can use a subset of candidate hosts for prediction by the option `-l` to s
 
 ### Bug reports
 Please open a Github issue or contact Weili Wang weiliw@usc.edu
-
-## Citation
-Wang *et al.* "A network-based integrated framework for predicting virus–prokaryote interactions" NAR Genomics and Bioinformatics, Volume 2, Issue 2, June 2020, lqaa044, https://doi.org/10.1093/nargab/lqaa044
 
 -----------------------------------------------------------------------------------------------
 ## Copyright and License Information
