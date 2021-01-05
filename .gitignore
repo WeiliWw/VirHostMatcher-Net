@@ -3,3 +3,4 @@ data/
 src/tools-1.0*
 src/tools.cpython*
 __pycache__/*
+src/__pycache__/*
