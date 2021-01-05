@@ -9,24 +9,24 @@ import src.args
 args = src.args.parse_arguments()
 #args = parser.parse_args(['-q','test_query/','-t','8','-o','tmp','--short-contig'])
 
-query_virus_dir = os.path.abspath(os.path.expanduser(args.query_virus_dir[0]))
+query_virus_dir = os.path.abspath(os.path.expanduser(args.query_virus_dir))
 if not os.path.isdir(query_virus_dir):
     sys.exit('Query directory error: no such directory '+ query_virus_dir)
 
 
-output_dir = os.path.abspath(os.path.expanduser(args.output_dir[0]))
+output_dir = os.path.abspath(os.path.expanduser(args.output_dir))
 if not os.path.isdir(output_dir):
     print("Specified output directory does not exist!\n"
           "Creating {}".format(output_dir)
           )
     os.makedirs(output_dir)
 
-genome_list = args.genome_list[0]
+genome_list = args.genome_list
 if genome_list is not None:
     if not os.path.isfile(genome_list):
         sys.exit('Genome ID file error: no such file '+ genome_list)
 
-intermediate_dir = os.path.abspath(os.path.expanduser(args.intermediate_dir[0]))
+intermediate_dir = os.path.abspath(os.path.expanduser(args.intermediate_dir))
 
 
 # Basic checks on the data directory
@@ -53,7 +53,7 @@ print('Loading packages...')
 import pandas as pd    
 from predictor import HostPredictor     
 
-predictor = HostPredictor(query_virus_dir, args.short_contig, intermediate_dir, genome_list, args.num_Threads[0])
+predictor = HostPredictor(query_virus_dir, args.short_contig, intermediate_dir, genome_list, args.num_Threads)
 
 output_dir_features = os.path.join(output_dir, 'feature_values')
 try:
@@ -80,7 +80,7 @@ predictor.negSV.to_csv(os.path.join(output_dir_features,'feature_values_negSV.cs
 # predictor.blast.to_csv(os.path.join(output_dir_features,'feature_values_blast.csv'), float_format='%.5f')
 
 predictor.getScores()
-predictor.prediction(args.topN[0], output_dir_pred)
+predictor.prediction(args.topN, output_dir_pred)
 
 ## write predictions
 # for query,preds in dict_pred.items():
