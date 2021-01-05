@@ -2,3 +2,4 @@ build/
 data/
 src/tools-1.0*
 src/tools.cpython*
+__pycache__/*
