@@ -50,7 +50,7 @@ def get_f(a_K_count, a_expect):
 def get_all_f(Dir, K, order, Reverse, numThreads):
     M = order + 1
     sequence_list = [f for f in os.listdir(Dir) 
-                     if f.endswith(('.fasta', '.fa', '.fna'))]
+                     if f.lower().endswith(('.fasta', '.fa', '.fna'))]
     f_matrix = np.ones((len(sequence_list), 4**K))
     flag = False
     for i, seq in enumerate(sequence_list):

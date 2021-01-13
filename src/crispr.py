@@ -71,7 +71,7 @@ Parameters:
 def crispr_calculator(query_virus_dir, output_dir, numThreads):
     query_cont = []
     query_list = [f for f in os.listdir(query_virus_dir) 
-                  if f.endswith(('.fasta', '.fa', '.fna'))]
+                  if f.lower().endswith(('.fasta', '.fa', '.fna'))]
     crispr_output_dir = os.path.join(output_dir, 'CRISPR/')
     try:
         os.stat(crispr_output_dir)
