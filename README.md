@@ -32,6 +32,12 @@ In addition to dependencies, VirHostMatcher-Net requires to build local modules 
 git clone https://github.com/WeiliWw/VirHostMatcher-Net.git 
 cd VirHostMatcher-Net
 CC=g++ python setup.py install --install-platlib=./src/
+
+## Optional
+# Include the VirHostmatcher-Net directory in your $PATH
+# The main script is executable
+export PATH=/path/to/VirHostMatcher-Net/:$PATH
+VirHostMatcher.py -h
 ```
 ##### MacOS
 ```
@@ -59,6 +65,10 @@ At the directory of VirHostMatcher-Net, run
 wget -c http://www-rcf.usc.edu/~weiliw/VirHostMatcher-Net/data_VirHostMatcher-Net_both_modes.tar.gz    
 tar xf data_VirHostMatcher-Net_both_modes.tar.gz
 ```
+
+> Be advised
+>
+> The extracted `data` folder takes up 125G of disk space.
 
 #### Required format of query sequences
 VirHostMatcher-Net accepts files in FASTA format.
