@@ -2,6 +2,9 @@
 
 VirHostMatcher-Net is a network-based computational tool for predicting virus-host interactions. Current version predicts hosts of given viruses from a database of 62,493 Bacteria and Archaea candidates. VirHostMatcher-Net has two modes: predicting for complete genomes and predicting for short viral contigs.
 
+### Update on 2021/04/10: Please check the message below before usage!
+***Important:*** We corrected a critical bug in the software: the coefficients for SV+ and SV- were mistakenly switched when the software was published. Note this does not impact the results in the paper: we computed the feature values separately without the software (because the computation/simulation used in the study was too time-consuming for a single run by the software, especially for the blast feature that we evaluated in the study), and directly applied the coefficients to calculate the final score. 
+
 ## Citation
 Wang *et al.* "A network-based integrated framework for predicting virus–prokaryote interactions" NAR Genomics and Bioinformatics, Volume 2, Issue 2, June 2020, lqaa044, https://doi.org/10.1093/nargab/lqaa044.
 
