@@ -8,13 +8,9 @@ args = args.parse_arguments()
 _path = args.data_dir
 #_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# intercept, s2star/wish, posSV, negSV, crispr, blast
-# REGRESSION_COEFFICIENTS = [-0.648915, 14.756166, 3.401181,
-#                            -29.188570, 0.324167, 6334.783871]
-REGRESSION_COEFFICIENTS = [-1.85696213,  17.13324415, -27.73515517, 4.27680508, 0.12533108]
-# REGRESSION_COEFFICIENTS_SHORT = [28.311335, 19.282953, 5.485007,
-#                             -17.328643, 0.412549, 4462.823622]
-REGRESSION_COEFFICIENTS_SHORT = [39.58978537,  27.69902541, -15.18968327, 6.40628182, 0.20333482]
+# intercept, s2star/wish, posSV, negSV, crispr
+REGRESSION_COEFFICIENTS = [-1.85696213,  17.13324415, 4.27680508, -27.73515517, 0.12533108]
+REGRESSION_COEFFICIENTS_SHORT = [39.58978537,  27.69902541, 6.40628182, -15.18968327, 0.20333482]
 # INTERMEDIATE_RESULT = os.path.join(_path, 'intermediate_res/')
 # DB_HOST_PREFIX = os.path.join(_path, 'data/host_db_prefix/hostGenomes.fna')
 DB_HOST_CRISPR_PREFIX = os.path.join(_path, 'crispr_db_prefix/allCRISPRs')
