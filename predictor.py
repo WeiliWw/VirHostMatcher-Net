@@ -124,7 +124,7 @@ class HostPredictor:
 #                pred['blast_pct'] = self.blast.loc[query].rank(pct=True, method='min').loc[topIdx]
             #dict_pred[query] = pred
             if pred['score'][0] >= 0.7 and pred['hostSuperkingdom'][0] == 'Bacteria':
-                ind = (pred['score'][0] - 0.7)//0.005
+                ind = (pred['score'][0] - 0.31)//0.001 - 1
                 pred['acc_phylum'] = [pred_thre['hostPhylum'][ind]] + [None for i in range(len(pred)-1)]
                 if pred['hostClass'][0]:
                     pred['acc_class'] = [pred_thre['hostClass'][ind]] + [None for i in range(len(pred)-1)]
