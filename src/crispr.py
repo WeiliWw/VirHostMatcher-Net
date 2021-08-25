@@ -84,7 +84,7 @@ def crispr_calculator(query_virus_dir, output_dir, numThreads):
             query_cont.append(df)
     print('----CRISPR intermediate files are stored in ',crispr_output_dir,' ----')
     if query_cont == []:
-        return query_cont    # Return an empty list if no match for any queries
+        return pd.DataFrame()    # Return an empty data frame if no match for any queries
     else:
         df_concat = pd.concat(query_cont,axis =1,sort=False).groupby(axis=1,level=1,sort=False).sum().fillna(0)
         return df_concat
