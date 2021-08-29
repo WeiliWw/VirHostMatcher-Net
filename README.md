@@ -53,19 +53,19 @@ MACOSX_DEPLOYMENT_TARGET=10.9 CC=g++ python setup.py install --install-platlib=.
 The prediction model of VirHostMatcher-Net depends on a large amount of data: BLAST index files of all bacteria and their CRISPRs, WIsH models(short viral contig mode) and hash files for calculating s<sup>*</sup><sub>2</sub>, etc.
 
 #### Downloading
-(In MacOS, use command `curl -C` instead to download the data.)
+(In MacOS, use command `curl -C -` instead to download the data.)
 
 ##### Complete genome mode alone
 At the directory of VirHostMatcher-Net, run
 ```
-wget -c http://www-rcf.usc.edu/~weiliw/VirHostMatcher-Net/data_VirHostMatcher-Net_complete_genome_mode_alone.tar.gz    
+wget -c https://virhostmatcher-net.s3.us-east-2.amazonaws.com/data_VirHostMatcher-Net_complete_genome_mode_alone.tar.gz    
 tar xf data_VirHostMatcher-Net_complete_genome_mode_alone.tar.gz
 ```
 
 ##### Complete genome mode and short viral contig mode
 At the directory of VirHostMatcher-Net, run
 ```
-wget -c http://www-rcf.usc.edu/~weiliw/VirHostMatcher-Net/data_VirHostMatcher-Net_both_modes.tar.gz    
+wget -c https://virhostmatcher-net.s3.us-east-2.amazonaws.com/data_VirHostMatcher-Net_both_modes.tar.gz    
 tar xf data_VirHostMatcher-Net_both_modes.tar.gz
 ```
 
@@ -115,6 +115,9 @@ python VirHostMatcher-Net.py -q ./test/mVCs --short-contig -o output2 -n 3 -t 8 
 In both modes, VirHostMatcher-Net outputs a prediction file for each query virus to the specified directory. A prediction file is in .csv format where each row represents one candidate host with detailed taxanomic information, a prediction score, values (*_val) and percentiles (*_pct) of each feature. The feature percentile of a virus-host pair is defined as the percentile of this feature score among all scores between that virus and all the candidate hosts. A very high percentile (i.e. >95%) suggests significance of the feature on contributing to the prediction. In the output, the percentile of SV<sub>-</sub>, with a negative coefficient, is reversed to keep consistent with other feature percentiles. Tables of feature values are stored in a subdirectory `feature_values` under the output directory.
 
 Users can use a subset of candidate hosts for prediction by the option `-l` to specify a list of NCBI genome names. Two example lists of 4034 marine hosts and 9097 human-associated hosts can be found in the directory `genome_list`.  
+
+### Training and validation data
+Training and validation data are shared in [Google Drive](https://drive.google.com/drive/folders/1ilhe-xPQa89jZL8C33NgHNcymz-hkTEC?usp=sharing).
 
 ### Bug reports
 Please open a Github issue or contact Weili Wang weiliw@usc.edu
