@@ -52,26 +52,25 @@ MACOSX_DEPLOYMENT_TARGET=10.9 CC=g++ python setup.py install --install-platlib=.
 ### Data preparation
 The prediction model of VirHostMatcher-Net depends on a large amount of data: BLAST index files of all bacteria and their CRISPRs, WIsH models(short viral contig mode) and hash files for calculating s<sup>*</sup><sub>2</sub>, etc.
 
-#### Downloading
-(In MacOS, use command `curl -C -` instead to download the data.)
+#### Download
+We use [gdown.pl](https://github.com/circulosmeos/gdown.pl) to download the files from Google Drive. For Linux, please make sure you have `perl` and `wget` installed. For MacOS, we recommend you download using the browser with links provided below.
 
 ##### Complete genome mode alone
 At the directory of VirHostMatcher-Net, run
 ```
-wget -c https://virhostmatcher-net.s3.us-east-2.amazonaws.com/data_VirHostMatcher-Net_complete_genome_mode_alone.tar.gz    
+./gdown.pl https://drive.google.com/file/d/185U3ZLYe1uNmB5oCaIlb0IQNURnlyXcN data_VirHostMatcher-Net_complete_genome_mode_alone.tar.gz
 tar xf data_VirHostMatcher-Net_complete_genome_mode_alone.tar.gz
 ```
 
 ##### Complete genome mode and short viral contig mode
+> Note: The extracted `data` folder takes up 125G of disk space.
+
 At the directory of VirHostMatcher-Net, run
 ```
-wget -c https://virhostmatcher-net.s3.us-east-2.amazonaws.com/data_VirHostMatcher-Net_both_modes.tar.gz    
+./gdown.pl https://drive.google.com/file/d/1ZWTn_WIkSbtr6guyAPNnmmYai-qmh93P data_VirHostMatcher-Net_both_modes.tar.gz
 tar xf data_VirHostMatcher-Net_both_modes.tar.gz
 ```
 
-> Be advised
->
-> The extracted `data` folder takes up 125G of disk space.
 
 #### Required format of query sequences
 VirHostMatcher-Net accepts files in FASTA format.
