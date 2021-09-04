@@ -53,12 +53,17 @@ MACOSX_DEPLOYMENT_TARGET=10.9 CC=g++ python setup.py install --install-platlib=.
 The prediction model of VirHostMatcher-Net depends on a large amount of data: BLAST index files of all bacteria and their CRISPRs, WIsH models(short viral contig mode) and hash files for calculating s<sup>*</sup><sub>2</sub>, etc.
 
 #### Download
-We use [gdown.pl](https://github.com/circulosmeos/gdown.pl) to download the files from Google Drive. For Linux, please make sure you have `perl` and `wget` installed. For MacOS, we recommend you download using the browser with links provided below.
+Use `curl` to download the files from Google Drive (credit to [this genius post](https://stackoverflow.com/a/48133859/9250524)). 
 
 ##### Complete genome mode alone
 At the directory of VirHostMatcher-Net, run
 ```
-./gdown.pl https://drive.google.com/file/d/185U3ZLYe1uNmB5oCaIlb0IQNURnlyXcN data_VirHostMatcher-Net_complete_genome_mode_alone.tar.gz
+# download
+fileid="185U3ZLYe1uNmB5oCaIlb0IQNURnlyXcN"
+filename="data_VirHostMatcher-Net_complete_genome_mode_alone.tar.gz"
+curl -c ./cookie -s -L "https://drive.google.com/uc?export=download&id=${fileid}" > /dev/null
+curl -Lb ./cookie "https://drive.google.com/uc?export=download&confirm=`awk '/download/ {print $NF}' ./cookie`&id=${fileid}" -o ${filename}
+# extract
 tar xf data_VirHostMatcher-Net_complete_genome_mode_alone.tar.gz
 ```
 
@@ -67,7 +72,12 @@ tar xf data_VirHostMatcher-Net_complete_genome_mode_alone.tar.gz
 
 At the directory of VirHostMatcher-Net, run
 ```
-./gdown.pl https://drive.google.com/file/d/1ZWTn_WIkSbtr6guyAPNnmmYai-qmh93P data_VirHostMatcher-Net_both_modes.tar.gz
+# download
+fileid="1ZWTn_WIkSbtr6guyAPNnmmYai-qmh93P"
+filename="data_VirHostMatcher-Net_both_modes.tar.gz"
+curl -c ./cookie -s -L "https://drive.google.com/uc?export=download&id=${fileid}" > /dev/null
+curl -Lb ./cookie "https://drive.google.com/uc?export=download&confirm=`awk '/download/ {print $NF}' ./cookie`&id=${fileid}" -o ${filename}
+# extract
 tar xf data_VirHostMatcher-Net_both_modes.tar.gz
 ```
 
