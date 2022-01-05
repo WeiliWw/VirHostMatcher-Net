@@ -42,7 +42,7 @@ for subname in ['tables', 'crispr_db_prefix', 'host_wish_model']:
         sys.exit(
             "\nError: The data directory you provided is malformatted.\n"
             "More info: "
-            "https://github.com/WeiliWw/VirHostMatcher-Net#downloading\n"
+            "https://github.com/WeiliWw/VirHostMatcher-Net#download\n"
         )
 
 # =============================================================================
