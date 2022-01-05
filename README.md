@@ -53,7 +53,7 @@ MACOSX_DEPLOYMENT_TARGET=10.9 CC=g++ python setup.py install --install-platlib=.
 The prediction model of VirHostMatcher-Net depends on a large amount of data: BLAST index files of all bacteria and their CRISPRs, WIsH models(short viral contig mode) and hash files for calculating s<sup>*</sup><sub>2</sub>, etc.
 
 #### Download
-There are two packs of files for downloading, based on your use case: if you intend to use the software on complete genomes or long contigs, you can download "Pack 1" below which is much smaller than "Pack 2". The data can be directly downloaded from Google Drive](https://drive.google.com/drive/folders/1lkL6gtKJPqgQUxW2dcE2MnUvd2-mPKcD?usp=sharing), or you can use `curl` in the commandline to download the files from Google Drive (see below, credit to [this genius post](https://stackoverflow.com/a/48133859/9250524)). 
+There are two packs of files for downloading, based on your use case: if you intend to use the software on complete genomes or long contigs, you can download "Pack 1" below which is much smaller than "Pack 2". The data can be directly downloaded from [Google Drive](https://drive.google.com/drive/folders/1lkL6gtKJPqgQUxW2dcE2MnUvd2-mPKcD?usp=sharing), or you can use `curl` in the commandline to download the files from Google Drive (see below, credit to [this genius post](https://stackoverflow.com/a/48133859/9250524)). 
 
 ##### Pack 1: Complete genome mode alone
 At the directory of VirHostMatcher-Net, run
