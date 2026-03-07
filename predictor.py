@@ -17,14 +17,11 @@ class HostPredictor:
         Attributes calculated:
             s2star, posSV, negSV, crispr, blast, wish
         '''
-        try:
-            os.stat(intermediate_dir)
-        except:
-            os.mkdir(intermediate_dir)
+        os.makedirs(intermediate_dir, exist_ok=True)
         print("Intermediate results will be stored in ", intermediate_dir)
         
         self._short = ifShort
-        self.s2star, self._query_virus, self._df_interaction = src.s2star.s2star_caclculator(query_virus_dir, ifShort, numThreads)
+        self.s2star, self._query_virus, self._df_interaction = src.s2star.s2star_calculator(query_virus_dir, ifShort, numThreads)
         self.posSV, self.negSV = src.neighborhood.neighborhood_calculator(self._query_virus, self._df_interaction)
         self._virus_index = self._query_virus.index  # query virus index
         if genome_list is None:                     # when no genome list specified
@@ -50,33 +47,37 @@ class HostPredictor:
         #self.blast = src.blast.blast_calculator(query_virus_dir, self._virus_index, self._host_index, numThreads)
         
             
-    def getScores(self):
+    def _build_linear_score(self):
+        if self._short:
+            return REGRESSION_COEFFICIENTS_SHORT[0] * pd.DataFrame(
+                index=self._virus_index, columns=self._host_index
+            ).fillna(1) + \
+            REGRESSION_COEFFICIENTS_SHORT[1] * self.wish + \
+            REGRESSION_COEFFICIENTS_SHORT[2] * self.posSV + \
+            REGRESSION_COEFFICIENTS_SHORT[3] * self.negSV + \
+            REGRESSION_COEFFICIENTS_SHORT[4] * self.crispr
+        return REGRESSION_COEFFICIENTS[0] * pd.DataFrame(
+            index=self._virus_index, columns=self._host_index
+        ).fillna(1) + \
+        REGRESSION_COEFFICIENTS[1] * self.s2star + \
+        REGRESSION_COEFFICIENTS[2] * self.posSV + \
+        REGRESSION_COEFFICIENTS[3] * self.negSV + \
+        REGRESSION_COEFFICIENTS[4] * self.crispr
+
+    def get_scores(self):
         '''
         Output a prediction table
         '''
         print("Calculating prediction scores...")
-        #pred = pd.DataFrame(index=virus_index, columns=host_index).fill
-        if self._short:
-            score = REGRESSION_COEFFICIENTS_SHORT[0]*pd.DataFrame(index=self._virus_index, columns=self._host_index).fillna(1) +  \
-            REGRESSION_COEFFICIENTS_SHORT[1]*self.wish +  \
-            REGRESSION_COEFFICIENTS_SHORT[2]*self.posSV +  \
-            REGRESSION_COEFFICIENTS_SHORT[3]*self.negSV +  \
-            REGRESSION_COEFFICIENTS_SHORT[4]*self.crispr   
-#            REGRESSION_COEFFICIENTS_SHORT[5]*self.blast
-        else:
-            score = REGRESSION_COEFFICIENTS[0]*pd.DataFrame(index=self._virus_index, columns=self._host_index).fillna(1) +  \
-            REGRESSION_COEFFICIENTS[1]*self.s2star +  \
-            REGRESSION_COEFFICIENTS[2]*self.posSV +  \
-            REGRESSION_COEFFICIENTS[3]*self.negSV +  \
-            REGRESSION_COEFFICIENTS[4]*self.crispr 
-#            REGRESSION_COEFFICIENTS[5]*self.blast
-        self.score = 1- 1/(pd.DataFrame(score, dtype=float).apply(np.exp)+1)
-        
-    def prediction(self, topN, output_dir_pred):  
-        # dict_pred = {}
-        # read in taxa info:
+        linear_score = self._build_linear_score()
+        self.score = 1 - 1 / (pd.DataFrame(linear_score, dtype=float).apply(np.exp) + 1)
+
+    # Backward-compatible alias kept for existing callers.
+    def getScores(self):
+        self.get_scores()
+
+    def write_predictions(self, topN, output_dir_pred):
         taxa_info = pd.read_pickle(TAXA_INFO)
-#         taxa_info = taxa_info.set_index('hostNCBIName')
         pred_thre = pd.read_csv(PRED_THRE)
         '''
         If the highest scores have a tie more than topN, output them all
@@ -101,7 +102,6 @@ class HostPredictor:
             pred['posSV_val'] = self.posSV.loc[query]
             pred['negSV_val'] = self.negSV.loc[query]
             pred['crispr_val'] = self.crispr.loc[query]
-#            pred['blast_val'] = self.blast.loc[query]
             if self._short:
                 pred['WIsH_pct'] = self.wish.loc[query].rank(pct=True, method='min').loc[topIdx]
             else:
@@ -118,11 +118,6 @@ class HostPredictor:
                 pred['crispr_pct'] = ['NA'] * topNum
             else: 
                 pred['crispr_pct'] = self.crispr.loc[query].rank(pct=True, method='min').loc[topIdx]
-#            if self.blast.loc[query].max() == 0:
-#                pred['blast_pct'] = ['NA'] * topNum
-#            else:
-#                pred['blast_pct'] = self.blast.loc[query].rank(pct=True, method='min').loc[topIdx]
-            #dict_pred[query] = pred
             if pred['score'].iloc[0] >= 0.7 and pred['hostSuperkingdom'].iloc[0] == 'Bacteria':
                 ind = (pred['score'].iloc[0] - 0.31)//0.001 - 1
                 pred['acc_phylum'] = [pred_thre['hostPhylum'][ind]] + [None for i in range(len(pred)-1)]
@@ -135,7 +130,7 @@ class HostPredictor:
                 if pred['hostGenus'].iloc[0]:
                     pred['acc_genus'] = [pred_thre['hostGenus'][ind]] + [None for i in range(len(pred)-1)]
             pred.to_csv(os.path.join(output_dir_pred, (query+'_prediction.csv')), float_format='%.4f')
-        #return dict_pred
-            
-            
-        
+
+    # Backward-compatible alias kept for existing callers.
+    def prediction(self, topN, output_dir_pred):
+        self.write_predictions(topN, output_dir_pred)

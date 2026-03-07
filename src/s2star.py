@@ -247,7 +247,7 @@ Parameters:
 #    df_interaction = df_interaction.loc[virus_index][host_index]
 #    return s2star_query_host, s2star_query_virus, df_interaction
 #
-def s2star_caclculator(query_virus_dir, ifShort, numThreads):
+def s2star_calculator(query_virus_dir, ifShort, numThreads):
     mat_original_interaction = pd.read_csv(TABLE_INTER) # 352 by 31k
     if ifShort:
         print('----Calculation of s2* is split into two parts----')
@@ -266,5 +266,9 @@ def s2star_caclculator(query_virus_dir, ifShort, numThreads):
     #df_interaction = pd.concat([mat_original_interaction,pseudo_interaction]).groupby(level=0).sum().fillna(0)
     #df_interaction = df_interaction.loc[virus_index][host_index]
     #s2star_query_virus.values[[np.arange(s2star_query_virus.shape[0])]*2] = 0
-    return s2star_query_host, mat_query_bench, mat_original_interaction 
+    return s2star_query_host, mat_query_bench, mat_original_interaction
 
+
+# Backward-compatible alias (legacy typo kept to avoid breakage).
+def s2star_caclculator(query_virus_dir, ifShort, numThreads):
+    return s2star_calculator(query_virus_dir, ifShort, numThreads)

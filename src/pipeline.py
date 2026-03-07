@@ -83,6 +83,6 @@ def run_prediction(config: RuntimeConfig):
         float_format='%.4f',
     )
 
-    predictor.getScores()
-    predictor.prediction(config.topN, output_dir_pred)
+    predictor.get_scores()
+    predictor.write_predictions(config.topN, output_dir_pred)
     print('---- Predictions are written to ', config.output_dir, ' ----')
