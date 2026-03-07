@@ -70,7 +70,7 @@ class HostPredictor:
             REGRESSION_COEFFICIENTS[3]*self.negSV +  \
             REGRESSION_COEFFICIENTS[4]*self.crispr 
 #            REGRESSION_COEFFICIENTS[5]*self.blast
-        self.score = 1- 1/(pd.DataFrame(score, dtype=np.float).apply(np.exp)+1)
+        self.score = 1- 1/(pd.DataFrame(score, dtype=float).apply(np.exp)+1)
         
     def prediction(self, topN, output_dir_pred):  
         # dict_pred = {}
@@ -123,16 +123,16 @@ class HostPredictor:
 #            else:
 #                pred['blast_pct'] = self.blast.loc[query].rank(pct=True, method='min').loc[topIdx]
             #dict_pred[query] = pred
-            if pred['score'][0] >= 0.7 and pred['hostSuperkingdom'][0] == 'Bacteria':
-                ind = (pred['score'][0] - 0.31)//0.001 - 1
+            if pred['score'].iloc[0] >= 0.7 and pred['hostSuperkingdom'].iloc[0] == 'Bacteria':
+                ind = (pred['score'].iloc[0] - 0.31)//0.001 - 1
                 pred['acc_phylum'] = [pred_thre['hostPhylum'][ind]] + [None for i in range(len(pred)-1)]
-                if pred['hostClass'][0]:
+                if pred['hostClass'].iloc[0]:
                     pred['acc_class'] = [pred_thre['hostClass'][ind]] + [None for i in range(len(pred)-1)]
-                if pred['hostOrder'][0]:
+                if pred['hostOrder'].iloc[0]:
                     pred['acc_order'] = [pred_thre['hostOrder'][ind]] + [None for i in range(len(pred)-1)]
-                if pred['hostFamily'][0]:
+                if pred['hostFamily'].iloc[0]:
                     pred['acc_family'] = [pred_thre['hostFamily'][ind]] + [None for i in range(len(pred)-1)]
-                if pred['hostGenus'][0]:
+                if pred['hostGenus'].iloc[0]:
                     pred['acc_genus'] = [pred_thre['hostGenus'][ind]] + [None for i in range(len(pred)-1)]
             pred.to_csv(os.path.join(output_dir_pred, (query+'_prediction.csv')), float_format='%.4f')
         #return dict_pred

@@ -25,6 +25,47 @@ Helper functions for calculating s2star
 Alphabeta = ['A', 'C', 'G', 'T']
 Alpha_dict = dict(zip(Alphabeta, range(4)))
 
+
+def _kmer_count_fallback(seqfile, K, Reverse):
+    """
+    Fallback k-mer counter when the legacy C++ extension returns zero counts.
+    Counts contiguous A/C/G/T segments and restarts on any other character.
+    """
+    size = 4 ** K
+    counts = np.zeros(size, dtype=np.int64)
+    mask = (1 << (2 * (K - 1))) - 1
+
+    def _revcomp_index(num):
+        rc = 0
+        for i in range(K):
+            shift = 2 * (K - i - 1)
+            rc += (3 - ((num >> shift) & 3)) * (4 ** i)
+        return rc
+
+    with open(seqfile) as f:
+        num = 0
+        j = 0
+        for line in f:
+            if not line or line[0] == '>':
+                num = 0
+                j = 0
+                continue
+            for nuc in line.strip().upper():
+                code = Alpha_dict.get(nuc)
+                if code is None:
+                    num = 0
+                    j = 0
+                    continue
+                if j < (K - 1):
+                    num = num * 4 + code
+                    j += 1
+                else:
+                    num = ((num & mask) << 2) + code
+                    counts[num] += 1
+                    if Reverse:
+                        counts[_revcomp_index(num)] += 1
+    return counts
+
 def get_transition(count_array):
     shape = len(count_array)
     transition_array = count_array.reshape(shape//4, 4)
@@ -56,6 +97,11 @@ def get_all_f(Dir, K, order, Reverse, numThreads):
     for i, seq in enumerate(sequence_list):
         seqfile = os.path.join(Dir, seq)
         K_count = np.array(kmer_count(seqfile, numThreads, Reverse, K))
+        # Legacy extension can fail silently on some modern platforms.
+        # Fallback to a pure-Python counter only when this anomalous all-zero
+        # condition is detected for a non-empty sequence file.
+        if np.sum(K_count) == 0 and os.path.getsize(seqfile) > 0:
+            K_count = _kmer_count_fallback(seqfile, K, Reverse)
         if K_count[0] == -1:            # sanity check for the fasta files
             print('The query file {} contains invalid chars, please make sure it is a valid fasta file.'.format(seq))
             flag = True
@@ -63,6 +109,8 @@ def get_all_f(Dir, K, order, Reverse, numThreads):
             print('The query file {} is empty, please double check the file.'.format(seq))
             flag = True
         M_count = np.array(kmer_count(seqfile, numThreads, Reverse, M))
+        if np.sum(M_count) == 0 and os.path.getsize(seqfile) > 0:
+            M_count = _kmer_count_fallback(seqfile, M, Reverse)
         trans = get_transition(M_count)
         expect = get_expect(M_count, trans, K, M)
         f_matrix[i] = get_f(K_count, expect)
@@ -219,5 +267,4 @@ def s2star_caclculator(query_virus_dir, ifShort, numThreads):
     #df_interaction = df_interaction.loc[virus_index][host_index]
     #s2star_query_virus.values[[np.arange(s2star_query_virus.shape[0])]*2] = 0
     return s2star_query_host, mat_query_bench, mat_original_interaction 
-
 

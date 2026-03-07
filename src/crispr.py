@@ -6,6 +6,7 @@ import os
 import math
 import pandas as pd
 from Bio.Blast.Applications import NcbiblastnCommandline
+from Bio.Application import ApplicationError
 from .Variables import DB_HOST_CRISPR_PREFIX, TAXA_INFO
 from numpy import isnan
 '''
@@ -40,7 +41,11 @@ def crisprSingle(item, query_virus_dir, output_dir, numThreads):
     crispr_call = NcbiblastnCommandline(query=query_file,db=db_host_crispr_prefix,out=output_file,outfmt="6 qacc sacc evalue", evalue=1,gapopen=10,penalty=-1,
                                   gapextend=2,word_size=7,dust='no',
                                  task='blastn-short',perc_identity=90,num_threads=numThreads)
-    crispr_call()
+    try:
+        crispr_call()
+    except ApplicationError as e:
+        print('Warning: BLAST failed for {}: {}'.format(query_name, e))
+        return False, None
     '''
     Parse blast results
     '''
@@ -86,7 +91,8 @@ def crispr_calculator(query_virus_dir, output_dir, numThreads):
     if query_cont == []:
         return pd.DataFrame()    # Return an empty data frame if no match for any queries
     else:
-        df_concat = pd.concat(query_cont,axis =1,sort=False).groupby(axis=1,level=1,sort=False).sum().fillna(0)
+        merged = pd.concat(query_cont, axis=1, sort=False)
+        df_concat = merged.T.groupby(level=1, sort=False).sum().T.fillna(0)
         return df_concat
     
 '''
@@ -131,8 +137,6 @@ def uniGenus(df_input, host_index):
             df_full.loc[virus_index,idx] = df_full.loc[virus_index,idx].max(axis=1)
     return df_full.loc[virus_index,:]
 '''
-
-
 
 
 

@@ -1,0 +1,4 @@
+# Direct Python dependencies for VirHostMatcher-Net runtime
+numpy<2
+pandas
+biopython<1.85
