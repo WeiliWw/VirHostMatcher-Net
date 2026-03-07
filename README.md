@@ -19,21 +19,36 @@ VirHostMatcher-Net requires Python 3.4+ together with the following packages and
     + [numpy](https://www.scipy.org/scipylib/download.html)
 
 We recommend to use [Miniconda](https://conda.io/miniconda.html) to install all dependencies. After installing Miniconda, simply run
-```
+```bash
 conda install numpy pandas Biopython 
 conda install -c bioconda blast    # skip this line if you've already installed BLAST
 ``` 
 
 Alternatively, users may want to install Python3.X and dependencies manually. 
 
+### Quick Start (Linux/macOS)
+For a reproducible local setup and common commands:
+```bash
+# 1) create env + install python deps
+make setup
+
+# 2) build local C++ extension module (macOS)
+#    Linux users: see "Building local dependent modules" below.
+make build-ext
+
+# 3) run dataset-independent unit tests
+make test
+
+# 4) optional smoke run (requires ./data and blastn in PATH)
+make smoke DATA_DIR=./data BLAST_BIN=/path/to/ncbi-blast-2.17.0+/bin
+```
+
 ## Installation
 In addition to dependencies, VirHostMatcher-Net requires to build local modules and download database.
 
 ### Building local dependent modules
 ##### Linux: 
-```
-git clone https://github.com/WeiliWw/VirHostMatcher-Net.git 
-cd VirHostMatcher-Net
+```bash
 CC=g++ python setup.py install --install-platlib=./src/
 
 ## Optional
@@ -43,9 +58,7 @@ export PATH=/path/to/VirHostMatcher-Net/:$PATH
 VirHostMatcher.py -h
 ```
 ##### MacOS
-```
-git clone https://github.com/WeiliWw/VirHostMatcher-Net.git
-cd VirHostMatcher-Net
+```bash
 MACOSX_DEPLOYMENT_TARGET=10.9 CC=g++ python setup.py install --install-platlib=./src/
 ```
 
@@ -57,12 +70,11 @@ There are two packs of files for downloading, based on your use case: if you int
 
 ##### Pack 1: Complete genome mode alone
 At the directory of VirHostMatcher-Net, run
-```
+```bash
 # download
 fileid="185U3ZLYe1uNmB5oCaIlb0IQNURnlyXcN"
 filename="data_VirHostMatcher-Net_complete_genome_mode_alone.tar.gz"
-curl -c ./cookie -s -L "https://drive.google.com/uc?export=download&id=${fileid}" > /dev/null
-curl -Lb ./cookie "https://drive.google.com/uc?export=download&confirm=`awk '/download/ {print $NF}' ./cookie`&id=${fileid}" -o ${filename}
+curl -L "https://drive.usercontent.google.com/download?id={$fileid}&confirm=xxx" -o $filename
 # extract
 tar xf data_VirHostMatcher-Net_complete_genome_mode_alone.tar.gz
 ```
@@ -71,12 +83,11 @@ tar xf data_VirHostMatcher-Net_complete_genome_mode_alone.tar.gz
 > Note: The extracted `data` folder takes up 125G of disk space.
 
 At the directory of VirHostMatcher-Net, run
-```
+```bash
 # download
 fileid="1ZWTn_WIkSbtr6guyAPNnmmYai-qmh93P"
 filename="data_VirHostMatcher-Net_both_modes.tar.gz"
-curl -c ./cookie -s -L "https://drive.google.com/uc?export=download&id=${fileid}" > /dev/null
-curl -Lb ./cookie "https://drive.google.com/uc?export=download&confirm=`awk '/download/ {print $NF}' ./cookie`&id=${fileid}" -o ${filename}
+curl -L "https://drive.usercontent.google.com/download?id={$fileid}&confirm=xxx" -o $filename
 # extract
 tar xf data_VirHostMatcher-Net_both_modes.tar.gz
 ```
@@ -108,13 +119,13 @@ VirHostMatcher-Net accepts files in FASTA format.
 ### Examples
 
 #### Predict hosts of virus genomes
-```
+```bash
 mkdir output
 python VirHostMatcher-Net.py -q ./test/VGs -o output -i tmp -n 3 -t 8
 ```
 
 #### Predict hosts of viral contigs
-```
+```bash
 mkdir output2
 python VirHostMatcher-Net.py -q ./test/mVCs --short-contig -o output2 -n 3 -t 8 -l genome_list/marine_host_list.txt
 ```
