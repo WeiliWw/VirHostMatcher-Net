@@ -3,7 +3,7 @@ VENV ?= .venv
 PIP := $(VENV)/bin/pip
 
 DATA_DIR ?= ./data
-QUERY_DIR ?= ./test/VGs
+QUERY_DIR ?= ./sample_data/VGs
 SMOKE_OUT ?= output_smoke
 SMOKE_TMP ?= tmp_smoke
 BLAST_BIN ?=

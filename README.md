@@ -2,31 +2,11 @@
 
 VirHostMatcher-Net is a network-based computational tool for predicting virus-host interactions. Current version predicts hosts of given viruses from a database of 62,493 Bacteria and Archaea candidates. VirHostMatcher-Net has two modes: predicting for complete genomes and predicting for short viral contigs.
 
-### Update on 2021/04/10: Please check the message below before usage!
-***Important:*** We corrected a critical bug in the software: the coefficients for SV+ and SV- (see Equation 6 in the paper) were mistakenly swapped when the software was published. Note this does not impact the results in the paper: we computed the feature values separately without the software (because the computation/simulation used in the study was too time-consuming for a single run by the software, especially for the blast feature that we evaluated in the study), and directly applied the coefficients to calculate the final score. 
-
 ## Citation
 Wang *et al.* "A network-based integrated framework for predicting virus–prokaryote interactions" NAR Genomics and Bioinformatics, Volume 2, Issue 2, June 2020, lqaa044, https://doi.org/10.1093/nargab/lqaa044.
 
 
-### Dependencies
-
-VirHostMatcher-Net requires Python 3.4+ together with the following packages and `BLAST`.
-
-* Python packages
-    + [Biopython](http://biopython.org/wiki/Download)
-    + [pandas](https://pandas.pydata.org/) 
-    + [numpy](https://www.scipy.org/scipylib/download.html)
-
-We recommend to use [Miniconda](https://conda.io/miniconda.html) to install all dependencies. After installing Miniconda, simply run
-```bash
-conda install numpy pandas Biopython 
-conda install -c bioconda blast    # skip this line if you've already installed BLAST
-``` 
-
-Alternatively, users may want to install Python3.X and dependencies manually. 
-
-### Quick Start (Linux/macOS)
+## Quick Start (Linux/macOS)
 For a reproducible local setup and common commands:
 ```bash
 # 1) create env + install python deps
@@ -42,9 +22,23 @@ make test
 # 4) optional smoke run (requires ./data and blastn in PATH)
 make smoke DATA_DIR=./data BLAST_BIN=/path/to/ncbi-blast-2.17.0+/bin
 ```
+If this works for you, skip [Installation](#installation) (assuming [BLAST](https://blast.ncbi.nlm.nih.gov/doc/blast-help/downloadblastdata.html) is installed). Note that [Data preparation](#data-preparation) is still needed.
 
 ## Installation
-In addition to dependencies, VirHostMatcher-Net requires to build local modules and download database.
+### Dependencies
+
+VirHostMatcher-Net requires Python 3.4+ together with the following packages and `BLAST`.
+
+* Python packages
+    + [Biopython](http://biopython.org/wiki/Download)
+    + [pandas](https://pandas.pydata.org/) 
+    + [numpy](https://www.scipy.org/scipylib/download.html)
+
+We recommend to use [Miniconda](https://conda.io/miniconda.html) to install all dependencies. After installing Miniconda, simply run
+```bash
+conda install numpy pandas Biopython 
+conda install -c bioconda blast    # skip this line if you've already installed BLAST
+``` 
 
 ### Building local dependent modules
 ##### Linux: 
@@ -55,14 +49,14 @@ CC=g++ python setup.py install --install-platlib=./src/
 # Include the VirHostmatcher-Net directory in your $PATH
 # The main script is executable
 export PATH=/path/to/VirHostMatcher-Net/:$PATH
-VirHostMatcher.py -h
+VirHostMatcher-Net.py -h
 ```
 ##### MacOS
 ```bash
 MACOSX_DEPLOYMENT_TARGET=10.9 CC=g++ python setup.py install --install-platlib=./src/
 ```
 
-### Data preparation
+## Data preparation
 The prediction model of VirHostMatcher-Net depends on a large amount of data: BLAST index files of all bacteria and their CRISPRs, WIsH models(short viral contig mode) and hash files for calculating s<sup>*</sup><sub>2</sub>, etc.
 
 #### Download
@@ -121,13 +115,13 @@ VirHostMatcher-Net accepts files in FASTA format.
 #### Predict hosts of virus genomes
 ```bash
 mkdir output
-python VirHostMatcher-Net.py -q ./test/VGs -o output -i tmp -n 3 -t 8
+python VirHostMatcher-Net.py -q ./sample_data/VGs -o output -i tmp -n 3 -t 8
 ```
 
 #### Predict hosts of viral contigs
 ```bash
 mkdir output2
-python VirHostMatcher-Net.py -q ./test/mVCs --short-contig -o output2 -n 3 -t 8 -l genome_list/marine_host_list.txt
+python VirHostMatcher-Net.py -q ./sample_data/mVCs --short-contig -o output2 -n 3 -t 8 -l genome_list/marine_host_list.txt
 ```
 
 
