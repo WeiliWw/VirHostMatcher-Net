@@ -5,7 +5,6 @@ import src.s2star
 import src.crispr
 import src.neighborhood
 import src.wish
-# import src.blast
 from src.Variables import REGRESSION_COEFFICIENTS, REGRESSION_COEFFICIENTS_SHORT, TAXA_INFO, PRED_THRE
 import pandas as pd
 import numpy as np
@@ -13,15 +12,13 @@ import os
 
 class HostPredictor:
     def __init__(self, query_virus_dir, ifShort, intermediate_dir, genome_list, numThreads=1):
-        '''
-        Attributes calculated:
-            s2star, posSV, negSV, crispr, blast, wish
-        '''
+        '''Attributes calculated: s2star/posSV/negSV/crispr/wish.'''
         os.makedirs(intermediate_dir, exist_ok=True)
         print("Intermediate results will be stored in ", intermediate_dir)
         
         self._short = ifShort
         self.s2star, self._query_virus, self._df_interaction = src.s2star.s2star_calculator(query_virus_dir, ifShort, numThreads)
+
         self.posSV, self.negSV = src.neighborhood.neighborhood_calculator(self._query_virus, self._df_interaction)
         self._virus_index = self._query_virus.index  # query virus index
         if genome_list is None:                     # when no genome list specified
@@ -40,12 +37,9 @@ class HostPredictor:
             self.wish = src.wish.wish_llkd_calculator(query_virus_dir, self._virus_index, self._host_index, intermediate_dir, numThreads)
         else:
             self.wish = None
-#        self.blast = src.blast.blast_calculator(query_virus_dir, self._virus_index, self._host_index, genomes, intermediate_dir, numThreads)
         self._crispr_signals = src.crispr.crispr_calculator(query_virus_dir, intermediate_dir, numThreads)
         self.crispr = src.crispr.uniGenus(self._crispr_signals, self._virus_index, self._host_index)
-        # wish , if statement?
-        #self.blast = src.blast.blast_calculator(query_virus_dir, self._virus_index, self._host_index, numThreads)
-        
+
             
     def _build_linear_score(self):
         if self._short:
@@ -85,39 +79,42 @@ class HostPredictor:
         print("Making predictions...")
         for query in self.score.index:
             query_score = self.score.loc[query]
-            topIdx = list()
-            topNum = 0
-            while topNum < topN and topNum <= len(self._host_index):
-                idx = query_score[query_score == query_score.max()].index
-                topIdx.extend(idx)
-                topNum = len(topIdx)
-                query_score = query_score.drop(idx)
-                #print("size of query: ", query_score.size)
+            sorted_scores = query_score.sort_values(ascending=False, kind='mergesort')
+            if topN >= len(sorted_scores):
+                topIdx = sorted_scores.index
+            else:
+                threshold = sorted_scores.iloc[topN - 1]
+                topIdx = sorted_scores[sorted_scores >= threshold].index
+            topNum = len(topIdx)
+
             pred = taxa_info.loc[topIdx]
             pred['score'] = self.score.loc[query][topIdx]
             if self._short:
                 pred['WIsH_val'] = self.wish.loc[query]
             else:
                 pred['s2star_val'] = self.s2star.loc[query]
-            pred['posSV_val'] = self.posSV.loc[query]
-            pred['negSV_val'] = self.negSV.loc[query]
-            pred['crispr_val'] = self.crispr.loc[query]
+            pos_row = self.posSV.loc[query]
+            neg_row = self.negSV.loc[query]
+            crispr_row = self.crispr.loc[query]
+            pred['posSV_val'] = pos_row
+            pred['negSV_val'] = neg_row
+            pred['crispr_val'] = crispr_row
             if self._short:
                 pred['WIsH_pct'] = self.wish.loc[query].rank(pct=True, method='min').loc[topIdx]
             else:
                 pred['s2star_pct'] = self.s2star.loc[query].rank(pct=True, method='min').loc[topIdx]
-            if self.posSV.loc[query].max() == 0:
+            if pos_row.max() == 0:
                 pred['posSV_pct'] = ['NA'] * topNum 
             else: 
-                pred['posSV_pct'] = self.posSV.loc[query].rank(pct=True, method='min').loc[topIdx]
-            if self.negSV.loc[query].max() == 0:
+                pred['posSV_pct'] = pos_row.rank(pct=True, method='min').loc[topIdx]
+            if neg_row.max() == 0:
                 pred['negSV_pct'] = ['NA'] * topNum
             else:     # negative coefficient
-                pred['negSV_pct'] = 1 - self.negSV.loc[query].rank(pct=True, method='max').loc[topIdx]
-            if self.crispr.loc[query].max() == 0:
+                pred['negSV_pct'] = 1 - neg_row.rank(pct=True, method='max').loc[topIdx]
+            if crispr_row.max() == 0:
                 pred['crispr_pct'] = ['NA'] * topNum
             else: 
-                pred['crispr_pct'] = self.crispr.loc[query].rank(pct=True, method='min').loc[topIdx]
+                pred['crispr_pct'] = crispr_row.rank(pct=True, method='min').loc[topIdx]
             if pred['score'].iloc[0] >= 0.7 and pred['hostSuperkingdom'].iloc[0] == 'Bacteria':
                 ind = (pred['score'].iloc[0] - 0.31)//0.001 - 1
                 pred['acc_phylum'] = [pred_thre['hostPhylum'][ind]] + [None for i in range(len(pred)-1)]
@@ -129,6 +126,7 @@ class HostPredictor:
                     pred['acc_family'] = [pred_thre['hostFamily'][ind]] + [None for i in range(len(pred)-1)]
                 if pred['hostGenus'].iloc[0]:
                     pred['acc_genus'] = [pred_thre['hostGenus'][ind]] + [None for i in range(len(pred)-1)]
+            pred.index.name = 'hostNCBIName'
             pred.to_csv(os.path.join(output_dir_pred, (query+'_prediction.csv')), float_format='%.4f')
 
     # Backward-compatible alias kept for existing callers.
